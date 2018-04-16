@@ -1,0 +1,26 @@
+version: '3'
+services:
+  fluentd:
+    image: i05nagai/fluentd:latest
+    restart: always
+    command: fluentd
+    depends_on:
+      - docker
+    volumes:
+      - log-volume:/var/log
+  docker:
+    image: "docker:dind"
+    command:
+      - "--storage-driver"
+      - "overlay2"
+      - "--host"
+      - "tcp://0.0.0.0:2376"
+    privileged: true
+    restart: always
+    ports:
+      - "2376:2376"
+    volumes:
+      - log-volume:/var/log
+volumes:
+  log-volume:
+    driver: local
