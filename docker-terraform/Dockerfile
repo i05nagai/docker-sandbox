@@ -10,6 +10,7 @@ RUN \
         curl \
         unzip \
         git \
+        make \
     && curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && echo "${TERRAFORM_SHA256SUM}  /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > /tmp/terraform_${TERRAFORM_VERSION}_SHA256SUMS
 
