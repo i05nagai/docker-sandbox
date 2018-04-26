@@ -1,4 +1,4 @@
-DOCKER_IMAGE_PREFIX = gcr.io/project/
+DOCKER_IMAGE_PREFIX = i05nagai/
 DOCKER_COMMAND = gcloud docker --
 DIRNAME = $(shell basename $(shell pwd))
 NAME = $(subst docker-,,${DIRNAME})
