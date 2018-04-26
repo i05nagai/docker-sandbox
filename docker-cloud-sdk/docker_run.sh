@@ -2,5 +2,5 @@
 
 docker run \
   --rm -it \
-  i05nagai/kubernetes-cli:latest \
+  i05nagai/cloud-sdk:latest \
   /bin/bash

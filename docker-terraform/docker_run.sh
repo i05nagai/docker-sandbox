@@ -2,5 +2,6 @@
 
 docker run \
   --rm -it \
-  i05nagai/kubernetes-cli:latest \
+  --name terraform \
+  i05nagai/terraform:latest \
   /bin/bash

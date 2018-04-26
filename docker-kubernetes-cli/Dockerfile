@@ -1,5 +1,13 @@
 FROM ubuntu:16.04
 
+RUN \
+    apt-get update \
+    && apt-get install -y \
+        curl \
+        python \
+        make \
+        apt-transport-https
+
 # gcp
 RUN \
     mkdir /tmp/gcloud \
@@ -21,4 +29,5 @@ RUN \
         kubectl \
         kubernetes-cni
 
-ENTRYPOINT ["/opt/kubernetes-cli/entrypoint.sh"]
+COPY ./opt /opt
+ENTRYPOINT ["/opt/local/kubernetes-cli/entrypoint.sh"]
