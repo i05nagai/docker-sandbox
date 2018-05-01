@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker version
+  - docker login --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD
+
+script:
+  - make push
+
+env:
+  global:
+    - SPARK_VERSION=2.1.1-alpine

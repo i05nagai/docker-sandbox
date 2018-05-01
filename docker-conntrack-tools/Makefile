@@ -1,10 +1,4 @@
-
-IMAGE=conntrack-tools
-TAG=latest
-CONTAINER=conntrack
-
-build:
-	docker build -t ${IMAGE}:${TAG} .
+include ../script/make/build_docker_image.mk
 
 run:
 	docker run \
