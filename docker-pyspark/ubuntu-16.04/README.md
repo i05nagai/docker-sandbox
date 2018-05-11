@@ -1,14 +1,13 @@
-## alpine based
+## Ubuntu based
 This Docker image helps you to run Spark (on Docker) with the following installed:
 
 1. [Apache Spark](https://spark.apache.org/) 2.1.1
     * running on Hadoop 2.7.3 and Java openjdk version "1.8.0_92-internal"
-2. Python 3.4.3
+2. Python 3.4.8
 3. Spark's python interface
     * [Welcome to Spark Python API Docs! — PySpark 2.1.1 documentation](http://spark.apache.org/docs/latest/api/python/index.html)
 
-
-### Building docker images
+### Building the docker image
 
 ```
 make
