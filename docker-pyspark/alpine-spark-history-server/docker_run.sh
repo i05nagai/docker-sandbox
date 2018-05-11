@@ -1,8 +1,11 @@
 #!/bin/bash
 
+PATH_TO_THIS_DIR=$(cd $(dirname ${0});pwd)
+
 docker run --rm \
-  --detach \
   -p 18080:18080 \
-  --volume $(PWD)/logs:/tmp/spark-events \
-  makotonagai/pyspark:spark-history-server \
-  /bin/bash /tmp/scripts/run_history_server.sh
+  --name pyspark \
+  --detach \
+  --volume ${PATH_TO_THIS_DIR}/logs:/tmp/spark-events \
+  i05nagai/pyspark-alpine-spark-history-server \
+  /bin/bash /opt/local/pyspark/run_spark_history_server.sh

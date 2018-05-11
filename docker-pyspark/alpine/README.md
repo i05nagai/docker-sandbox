@@ -9,30 +9,17 @@ This Docker image helps you to run Spark (on Docker) with the following installe
 
 
 ### Building docker images
-
 ```
 make
 ```
 
-### Starting pyspark history server
-See [Monitoring and Instrumentation - Spark 2.2.0 Documentation](https://spark.apache.org/docs/2.2.0/monitoring.html).
+### Starting pyspark
 
 ```
-docker pull i05nagai/pyspark-alpine-spark-history-server:latest
+docker pull i05nagai/pyspark-alpine:latest
+docker run --rm -it i05nagai/pyspark-alpine:latest /bin/bash
+$ ./bin/pyspark
 ```
-
-You need to put your logs into `alpine-spark-history-server/logs` then execute 
-
-```
-docker run --rm \
-  -p 18080:18080 \
-  --name pyspark \
-  --volume $(pwd)/logs:/opt/local/pyspark/logs \
-  i05nagai/pyspark-alpine-spark-history-server \
-  /bin/bash /opt/local/pyspark/run_spark_history_server.sh
-```
-
-See `docker_run.sh` for details.
 
 ## Troubleshooting
 If you are unable to access HDFS from pyspark, try running pyspark with the `--master yarn` flag.
