@@ -20,4 +20,7 @@ RUN \
     && tar xzf Python-3.4.8.tgz \
     && cd Python-3.4.8 \
     && ./configure --enable-optimizations \
-    && make install
+    && make install \
+    # pip
+    && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python get-pip.py pip==9.0.3
