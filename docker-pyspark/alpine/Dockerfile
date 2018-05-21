@@ -53,5 +53,6 @@ RUN curl --location --retry 3 \
     && mv /usr/$SPARK_PACKAGE $SPARK_HOME \
     && rm -rf $SPARK_HOME/examples $SPARK_HOME/ec2
 
+COPY ./skelton /
 WORKDIR /$SPARK_HOME
 CMD ["bin/spark-class", "org.apache.spark.deploy.master.Master"]
