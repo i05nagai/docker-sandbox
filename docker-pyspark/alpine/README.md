@@ -7,11 +7,28 @@ This Docker image helps you to run Spark (on Docker) with the following installe
 3. Spark's python interface
     * [Welcome to Spark Python API Docs! — PySpark 2.1.1 documentation](http://spark.apache.org/docs/latest/api/python/index.html)
 
+### Directories
+* `host/`
+    * dir which attaced to docker container
+* `skelton/`
+    * copy to docker images at docker-build
+* `example/`
+    * example of creating pyspark cluster
+
 
 ### Building docker images
 ```
 make
 ```
+
+### Run PySpark example
+
+```
+$ ./docker_run_bash.sh
+# in docker contianer
+$ ./run.sh
+```
+
 
 ### Starting pyspark
 
@@ -27,3 +44,4 @@ If you are unable to access HDFS from pyspark, try running pyspark with the `--m
 If you are unable to access the HTTP SparkUI, verify that the open ports are redirected from your virtual machine to your host machine. Under VirtualBox, see the machine's `Settings > Network > Port Forwarding`.
 
 ## Reference
+* [Generate Test CSV Data](http://www.convertcsv.com/generate-test-data.htm)
