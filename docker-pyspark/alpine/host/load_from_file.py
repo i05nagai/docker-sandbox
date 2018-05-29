@@ -33,7 +33,7 @@ if __name__ == "__main__":
     logger = get_logger(sc, __name__)
 
     path_to_csv = 'data/data.csv'
-    df = spark.read.option("header", "true").csv(path_to_csv)
+    df = spark.read.option('header', 'true').csv(path_to_csv)
     lines = df.rdd
 
     # counts by age
