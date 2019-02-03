@@ -1,0 +1,222 @@
+
+# The Datadog api key to associate your Agent's data with your organization.
+# Can be found here:
+# https://app.datadoghq.com/account/settings
+api_key:
+
+# The site of the Datadog intake to send Agent data to.
+# Defaults to 'datadoghq.com', set to 'datadoghq.eu' to send data to the EU site.
+# site: datadoghq.com
+
+# The host of the Datadog intake server to send Agent data to, only set this option
+# if you need the Agent to send data to a custom URL.
+# Overrides the site setting defined in "site".
+# dd_url: https://app.datadoghq.com
+
+# If you need a proxy to connect to the Internet, provide it here (default:
+# disabled). You can use the 'no_proxy' list to specify hosts that should
+# bypass the proxy. These settings might impact your checks requests, please
+# refer to the specific check documentation for more details. Environment
+# variables DD_PROXY_HTTP, DD_PROXY_HTTPS and DD_PROXY_NO_PROXY (space-separated string)
+# will override the values set here. See https://docs.datadoghq.com/agent/proxy/.
+#
+# proxy:
+#   http: http://user:password@proxy_for_http:port
+#   https: http://user:password@proxy_for_https:port
+#   no_proxy:
+#     - host1
+#     - host2
+
+# Setting this option to "true" will tell the agent to skip validation of SSL/TLS certificates.
+# This may be necessary if the agent is running behind a proxy. See this page for details:
+# https://github.com/DataDog/dd-agent/wiki/Proxy-Configuration#using-haproxy-as-a-proxy
+# skip_ssl_validation: false
+
+# Setting this option to "true" will force the agent to only use TLS 1.2 when
+# pushing data to the Datadog intake specified in "site" or "dd_url".
+# force_tls_12: false
+
+# Force the hostname to whatever you want. (default: auto-detected)
+# hostname: mymachine.mydomain
+
+# Make the agent use "hostname -f" on unix-based systems as a last resort
+# way of determining the hostname instead of Golang "os.Hostname()"
+# This will be enabled by default in version 6.6
+# More information at  https://dtdg.co/flag-hostname-fqdn
+# hostname_fqdn: false
+
+# Set the host's tags (optional)
+# tags:
+#   - mytag
+#   - env:prod
+#   - role:database
+
+# Split tag values according to a given separator.
+# Only applies to host tags, tags coming from container integrations.
+# Does not apply to tags on dogstatsd metrics, and tags collected by other
+# integrations.
+# This option is useful when the native tags do not support repeating multiple
+# tags with the same name and different values.
+#
+# Example use-case:
+#
+#  With a raw collected tag "foo:1;2;3"
+#  Using the following configuration:
+#
+#    tag_value_split_separator:
+#      foo: ;
+#
+#  will result in the raw tag being transformed into "foo:1", "foo:2", "foo:3" tags
+
+# Configure the level of granularity of tags to send for checks and dogstatsd metrics and events.
+# Choices are:
+# - low: add tags about low-cardinality objects (clusters, hosts, deployments, container images, ...)
+# - orchestrator: add tags about pod, (in Kubernetes), or task (in ECS or Mesos) -level of cardinality
+# - high: add tags about high-cardinality objects (individual containers, user IDs in requests, ...)
+# WARNING: sending container tags for dogstatsd metrics may create more metrics
+# (one per container instead of one per host). This may impact your custom metrics billing.
+#
+# checks_tag_cardinality: orchestrator
+# dogstatsd_tag_cardinality: low
+
+# Histogram and Historate configuration
+#
+# Configure which aggregated value to compute. Possible values are: min, max,
+# median, avg, sum and count.
+#
+# histogram_aggregates: ["max", "median", "avg", "count"]
+#
+# Configure which percentiles will be computed. Must be a list of float
+# between 0 and 1.
+# Warning: percentiles must be specified as yaml strings
+#
+# histogram_percentiles: ["0.95"]
+#
+# Copy histogram values to distributions for true global distributions (in beta)
+# This will increase the number of custom metrics created
+# histogram_copy_to_distribution: false
+#
+# A prefix to add to distribution metrics created when histogram_copy_to_distributions is true
+# histogram_copy_to_distribution_prefix: ""
+
+# Forwarder timeout in seconds
+# forwarder_timeout: 20
+
+# The forwarder retries failed requests. Use this setting to change the
+# maximum length of the forwarder's retry queue (each request in the queue
+# takes no more than 2MB in memory)
+# forwarder_retry_queue_max_size: 30
+
+# The number of workers used by the forwarder. Please note each worker will
+# open an outbound HTTP connection towards Datadog's metrics intake at every
+# flush.
+# forwarder_num_workers: 1
+
+# Collect AWS EC2 custom tags as agent tags
+# collect_ec2_tags: false
+
+# Collect Google Cloud Engine metadata as agent tags
+# collect_gce_tags: true
+
+# Logging
+#
+# log_level: info
+# log_file: /var/log/datadog/agent.log
+
+# Set to 'true' to output logs in JSON format
+# log_format_json: false
+
+# Set to 'false' to disable logging to stdout
+# log_to_console: true
+
+# Set to 'true' to disable logging to the log file
+# disable_file_logging: false
+
+# Set to 'true' to enable logging to syslog.
+# Note: Even if this option is set to 'false', the service launcher of your environment
+# may redirect the agent process' stdout/stderr to syslog. In that case, if you wish
+# to disable logging to syslog entirely, please set 'log_to_console' to 'false' as well.
+# log_to_syslog: false
+#
+# If 'syslog_uri' is left undefined/empty, a local domain socket connection will be attempted
+#
+# syslog_uri:
+#
+# Set to 'true' to output in an RFC 5424-compliant format
+#
+# syslog_rfc: false
+#
+# If TLS enabled, you must specify a path to a PEM certificate here
+#
+# syslog_pem: /path/to/certificate.pem
+#
+# If TLS enabled, you must specify a path to a private key here
+#
+# syslog_key: /path/to/key.pem
+#
+# If TLS enabled, you may enforce TLS verification here (defaults to true)
+#
+# syslog_tls_verify: true
+#
+
+# Cluster check dispatching
+#
+# The cluster-agent is able to autodiscover cluster resources and dispatch checks on
+# the node-agents (provided the clustercheck config provider is enabled on them).
+#
+# cluster_checks:
+#   Set to true to enable the dispatching logic on the leader cluster-agent.
+#   enabled: "true"
+#
+#   Node-agents that have not queried the cluster-agent for 30 seconds will be deleted,
+#   and their checks re-dispatched to other nodes. This delay is configurable here.
+#   node_expiration_timeout: 30
+#
+#   The cluster-agent needs to wait for all node-agents to report to it before
+#   dispatching configurations. This delay is configurable here.
+#   warmup_duration: 30
+#
+
+# Kubernetes apiserver integration
+#
+# When running in a pod, the agent will automatically use the pod's serviceaccount
+# to authenticate with the apiserver. If you wish to install the agent out of a pod
+# or customise connection parameters, you can provide the path to a KubeConfig file
+# see https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/
+#
+# kubernetes_kubeconfig_path: /path/to/file
+#
+# By default, communication with the apiserver is in json format. Setting the following
+# option to true will allow communication in the binary protobuf format, with a potential
+# performance improvement on both the agent and the apiserver.
+# kubernetes_apiserver_use_protobuf: false
+#
+# In order to collect Kubernetes service names, the agent needs certain rights (see RBAC documentation in
+# [docker readme](https://github.com/DataDog/datadog-agent/blob/master/Dockerfiles/agent/README.md#kubernetes)).
+# You can disable this option or set how often (in seconds) the agent refreshes the internal mapping of services to
+# ContainerIDs with the following options:
+# kubernetes_collect_metadata_tags: true
+# kubernetes_metadata_tag_update_freq: 60
+# kubernetes_apiserver_client_timeout: 10
+#
+# To collect Kubernetes events, leader election must be enabled and collect_kubernetes_events set to true.
+# Only the leader will collect events. More details about events [here](https://github.com/DataDog/datadog-agent/blob/master/Dockerfiles/agent/README.md#event-collection).
+# collect_kubernetes_events: false
+#
+#
+# Leader Election settings, more details about leader election [here](https://github.com/DataDog/datadog-agent/blob/master/Dockerfiles/agent/README.md#leader-election)
+# To enable the leader election on this node, set the leader_election variable to true.
+# leader_election: false
+# The leader election lease is an integer in seconds.
+# leader_lease_duration: 60
+#
+# Node labels that should be collected and their name in host tags. Off by default.
+# Some of these labels are redundant with metadata collected by
+# cloud provider crawlers (AWS, GCE, Azure)
+#
+# kubernetes_node_labels_as_tags:
+#   kubernetes.io/hostname: nodename
+#   beta.kubernetes.io/os: os
+#
+# Kubernetes cluster identifier used to avoid host alias collisions. Empty by default.
+# clustername: cluster_identifier
