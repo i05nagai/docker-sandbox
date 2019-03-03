@@ -1,4 +1,11 @@
-IGNORE_FILES=README.md Makefile script google-containers docker-pyspark docker-jupyter docker-cadviser docker-heapster
+IGNORE_FILES = README.md
+IGNORE_FILES += Makefile
+IGNORE_FILES += script
+IGNORE_FILES += docker-cadviser
+IGNORE_FILES += docker-heapster
+IGNORE_FILES += docker-jupyter
+IGNORE_FILES += docker-pyspark
+IGNORE_FILES += google-containers
 include script/make/build_directory.mk
 
 #

@@ -1,3 +1,5 @@
+include ../script/make/build_directory.mk
+
 build-ubuntu:
 	make --directory=ubuntu-16.04
 
