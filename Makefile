@@ -1,6 +1,7 @@
 IGNORE_FILES = README.md
 IGNORE_FILES += Makefile
 IGNORE_FILES += script
+IGNORE_FILES += docker-apache-beam
 IGNORE_FILES += docker-cadviser
 IGNORE_FILES += docker-heapster
 IGNORE_FILES += docker-jupyter
