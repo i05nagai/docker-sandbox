@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN \
     apt-get update \
@@ -6,5 +6,11 @@ RUN \
         curl \
         git \
         gnupg \
+        gcc \
+        g++ \
+        make \
     && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt-get install -y nodejs
+
+RUN \
+    npm install -g serverless
