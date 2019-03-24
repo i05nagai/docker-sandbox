@@ -10,6 +10,13 @@ IGNORE_FILES += google-containers
 include script/make/build_directory.mk
 
 #
+# buildkit
+#
+buildkit: core
+
+push-buildkit: core
+
+#
 # embulk
 #
 embulk: java8
