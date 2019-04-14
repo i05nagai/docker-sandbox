@@ -1,0 +1,6 @@
+pytest==4.4.0
+pytest-cov
+pytest-mock==1.6.2
+pytest-faker==2.0.0
+pytest-pep8
+pytest-env==0.6.2
