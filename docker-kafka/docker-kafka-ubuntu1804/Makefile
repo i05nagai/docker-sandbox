@@ -49,6 +49,18 @@ docker-run-kafka-client:
 		$(IMAGE) \
 		/bin/bash
 
+docker-run-kafka-client2:
+	docker run \
+		--rm \
+		-it \
+		--name kafka-client2 \
+		--network kafka \
+		--hostname kafka-client2 \
+		--workdir /tmp/repository/opt/local/kafka \
+		--volume $(PATH_TO_PARENT_DIR)/template/:/tmp/repository \
+		$(IMAGE) \
+		/bin/bash
+
 docker-run-kafka-zookeeper:
 	docker run \
 		--rm \
