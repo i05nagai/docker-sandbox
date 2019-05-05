@@ -1,0 +1,11 @@
+
+# Client {
+#    org.apache.zookeeper.server.auth.DigestLoginModule required
+#    username="kafka"
+#    password="kafka-secret";
+# };
+
+# Configure a KafkaServer section used when the broker validates client connections, including those from other brokers
+# The set of properties user_{userName} defines the passwords for all other clients that connect to the broker. In this example, there are two users kafkabroker and client1
+# Configure a Client section used when the broker connects to ZooKeeper. There is a single username and password that must match the ZooKeeper jaas configuration.
+
