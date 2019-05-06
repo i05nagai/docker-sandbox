@@ -1,5 +1,4 @@
-ARG DOCKER_IMAGE_PREFIX
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 #
 # java8
@@ -62,3 +61,4 @@ RUN \
 
 WORKDIR /$SPARK_HOME
 CMD ["bin/spark-class", "org.apache.spark.deploy.master.Master"]
+

@@ -11,6 +11,7 @@ import pyspark
 import os
 
 from . import wordcount
+from . import util
 
 
 def word_counts(sc, filename):
@@ -42,13 +43,7 @@ def group_by_age(spark, filename):
 
 
 if __name__ == "__main__":
-    conf = pyspark.SparkConf(
-    ).setMaster(
-        'local[*]'
-    ).setAppName(
-        'pyspark-sample'
-    )
-    sc = pyspark.SparkContext(conf=conf)
+    sc = util.create_spark_context()
     spark = pyspark.sql.SparkSession(sc)
 
     path_to_this_dir = os.path.abspath(os.path.dirname(__file__))
