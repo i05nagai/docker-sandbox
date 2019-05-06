@@ -2,6 +2,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 import operator
+from . import util
 
 
 def do_word_counts(lines):
@@ -20,6 +21,7 @@ def do_word_counts(lines):
               .reduceByKey(operator.add)
               )
     results = {word: count for word, count in counts.collect()}
+    util.get_logger(__name__).info('Results: {0}'.format(results))
     return results
 
 
