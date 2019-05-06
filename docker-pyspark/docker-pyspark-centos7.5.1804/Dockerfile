@@ -5,7 +5,7 @@ FROM centos:centos7.5.1804
 #
 ENV \
   # Define commonly used JAVA_HOME variable
-  JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64
+    JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
 
 RUN \
     yum update -y \
@@ -45,6 +45,7 @@ RUN \
 # SPARK
 #
 ENV SPARK_VERSION=2.4.1
+
 ENV SPARK_PACKAGE=spark-$SPARK_VERSION-bin-hadoop2.7
 ENV SPARK_HOME=/usr/spark-$SPARK_VERSION
 ENV PYSPARK_PYTHON=python3.6
@@ -54,7 +55,7 @@ ENV PATH=$PATH:$SPARK_HOME/bin
 RUN \
     set -x \
     && curl --location --retry 3 \
-        "http://mirror.synyx.de/apache/spark/spark-$SPARK_VERSION/$SPARK_PACKAGE.tgz" \
+        "https://archive.apache.org/dist/spark/spark-$SPARK_VERSION/$SPARK_PACKAGE.tgz" \
         | gunzip \
         | tar x -C /usr/ && \
         mv /usr/$SPARK_PACKAGE $SPARK_HOME \
