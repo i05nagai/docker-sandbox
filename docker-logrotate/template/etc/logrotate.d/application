@@ -1,0 +1,43 @@
+/tmp/repository/opt/local/logrotate/log/application.log {
+        daily
+        rotate 12
+        compress
+        delaycompress
+        missingok
+        notifempty
+        create 644 root root
+}
+
+/tmp/repository/opt/local/logrotate/log/application_2.log {
+        daily
+        rotate 30
+        compress
+        delaycompress
+        copytruncate
+        missingok
+        notifempty
+}
+
+# there is no hourly option for GNU logrotate
+/tmp/repository/opt/local/logrotate/log/application_hourly.log {
+        rotate 30
+        compress
+        delaycompress
+        copytruncate
+        missingok
+        notifempty
+        dateext
+        dateformat .%Y-%m-%d-%s
+}
+
+/tmp/repository/opt/local/logrotate/log/application_daily.log {
+        daily
+        rotate 30
+        compress
+        delaycompress
+        copytruncate
+        missingok
+        notifempty
+        dateext
+        dateformat .%Y-%m-%d-%s
+}
