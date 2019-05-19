@@ -1,4 +1,4 @@
-include ../script/make/build_docker_image.mk
+include ../script/make/build_directory.mk
 
 docker-run:
 	docker run --rm -it \
