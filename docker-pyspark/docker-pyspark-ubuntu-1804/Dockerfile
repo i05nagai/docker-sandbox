@@ -61,4 +61,3 @@ RUN \
 
 WORKDIR /$SPARK_HOME
 CMD ["bin/spark-class", "org.apache.spark.deploy.master.Master"]
-
