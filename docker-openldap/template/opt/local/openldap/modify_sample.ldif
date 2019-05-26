@@ -1,0 +1,13 @@
+dn: cn=Modify Me,dc=example,dc=com
+changetype: modify
+replace: mail
+mail: modme@example.com
+-
+add: title
+title: Grand Poobah
+-
+add: jpegPhoto
+jpegPhoto:< file:///tmp/modme.jpeg
+-
+delete: description
+-

@@ -2,7 +2,6 @@ dn: ou=People,dc=example,dc=com
 objectClass: organizationalUnit
 ou: People
 
-
 dn: ou=Groups,dc=example,dc=com
 objectClass: organizationalUnit
 ou: Groups
@@ -39,7 +38,7 @@ cn: i05nagai i05nagaigivenName
 displayName: i05nagai i05nagaiSn
 uidNumber: 10001
 gidNumber: 5000
-userPassword: i05nagai
 gecos: i05nagai i05nagaiSn
 loginShell: /bin/bash
 homeDirectory: /home/i05nagai
+userPassword: {SSHA}LiuzEw+oy0bJYwLpVMceasPSnSSd7AoZ

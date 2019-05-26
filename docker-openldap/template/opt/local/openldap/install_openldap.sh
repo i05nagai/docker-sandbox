@@ -28,3 +28,6 @@ slapd slapd/ppolicy_schema_needs_update select abort installation
 slapd slapd/unsafe_selfwrite_acl note
 EOF
 # slapd slapd/backend string ${LDAP_BACKEND}
+
+dpkg-reconfigure -f noninteractive slapd
+slapd
