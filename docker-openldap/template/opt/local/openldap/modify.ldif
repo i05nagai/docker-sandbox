@@ -1,4 +1,4 @@
 dn: uid=i05nagai,ou=People,dc=example,dc=com
 changetype: modify
 replace: userPassword
-userPassword: __PASSWORD_I05NAGAI__
+userPassword: {SSHA}NOckZd5oevmfCP7X36Y9huuA8lktwO8L
