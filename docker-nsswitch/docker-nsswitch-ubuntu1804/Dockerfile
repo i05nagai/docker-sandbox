@@ -5,6 +5,7 @@ RUN \
     && apt-get install -y \
         libnss-ldap \
         ldap-utils \
+        nscd \
         apt-utils
 
 RUN \
@@ -19,9 +20,5 @@ RUN \
       build-essential \
   && mkdir /var/run/sshd \
   && chmod 0755 /var/run/sshd
-
-RUN \
-    apt-get install -y \
-      nscd
 
 COPY ./template /
