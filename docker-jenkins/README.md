@@ -10,9 +10,16 @@
 Then access to `http://localhost:8080`.
 You need to enter the password which is displaied on your log.
 
-## Syntaxo
+## Syntax
 - [Pipeline Syntax](https://jenkins.io/doc/book/pipeline/syntax/)
     - docker
+- parameter
+    - [Pipeline Syntax](https://jenkins.io/doc/book/pipeline/syntax/#parameters-example)
+- script
+    - [Pipeline Syntax](https://jenkins.io/doc/book/pipeline/syntax/#script)
+
+- list of steps
+    - [Pipeline Steps Reference](https://jenkins.io/doc/pipeline/steps/)
 
 ## Tutorial
 * [jenkins\-docs/building\-a\-multibranch\-pipeline\-project: For an advanced tutorial on how to use Jenkins to build a multibranch Pipeline project with selectively executed stages\.](https://github.com/jenkins-docs/building-a-multibranch-pipeline-project)
@@ -134,3 +141,4 @@ If I restart the instance (via http://localhost:8080/restart), the issue disappe
 * https://github.com/jenkinsci/docker
 * [Getting started with the Guided Tour](https://jenkins.io/doc/pipeline/tour/getting-started/)
 * [End\-to\-End Multibranch Pipeline Project Creation](https://jenkins.io/doc/tutorials/build-a-multibranch-pipeline-project/)
+- https://jenkins.io/doc/pipeline/steps/workflow-durable-task-step/#sh-shell-script
