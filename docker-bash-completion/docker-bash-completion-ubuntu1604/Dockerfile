@@ -5,7 +5,10 @@ RUN \
     && apt-get install -y \
         autoconf \
         git \
-        make
+        make \
+        automake \
+        python3.5 \
+        python3-pip
 
 RUN \
     git clone https://github.com/scop/bash-completion.git /tmp/bash-completion \
@@ -14,8 +17,6 @@ RUN \
     && autoreconf -i \
     && ./configure \
     && make \
-    # optional, requires dejagnu and tcllib
-    && make check \
     # as root
     && make install 
 
