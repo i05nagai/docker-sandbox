@@ -46,11 +46,11 @@ RUN \
 #
 # install build-using-dockerfile
 #
-RUN \
-    cd /tmp/buildkit \
-    && go get github.com/containerd/containerd \
-    && go get github.com/moby/buildkit \
-    && go build ./examples/build-using-dockerfile \
-    && install build-using-dockerfile /usr/local/bin
+# RUN \
+#     cd /tmp/buildkit \
+#     && go get github.com/containerd/containerd \
+#     && go get github.com/moby/buildkit \
+#     && go build ./examples/build-using-dockerfile \
+#     && install build-using-dockerfile /usr/local/bin
 COPY ./opt /opt
 ENV PATH="$PATH:/opt/local/buildkit/bin"

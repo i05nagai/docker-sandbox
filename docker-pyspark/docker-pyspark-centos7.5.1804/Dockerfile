@@ -5,7 +5,7 @@ FROM centos:centos7.5.1804
 #
 ENV \
   # Define commonly used JAVA_HOME variable
-    JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+    JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
 
 RUN \
     yum update -y \
@@ -65,6 +65,7 @@ RUN \
 # use pyspark with ipython
 #
 ENV PYSPARK_DRIVER_PYTHON=ipython3
+ENV PYTHONPATH="$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.7-src.zip"
 # ENV PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 RUN \
     pip3.6 install ipython
@@ -72,3 +73,4 @@ RUN \
 
 WORKDIR /$SPARK_HOME
 CMD ["bin/spark-class", "org.apache.spark.deploy.master.Master"]
+COPY ./template /
