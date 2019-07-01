@@ -13,26 +13,29 @@ include script/make/build_directory.mk
 # buildkit
 #
 buildkit: core
-
 push-buildkit: core
 
 #
 # embulk
 #
 embulk: java8
-
 push-embulk: java8
 
 #
 # java8
 #
 java8: core
-
 push-java8: core
 
 #
 # pyspark
 #
 pyspark: java8
-
 push-pyspark: java8
+
+
+#
+# kibana
+#
+kibana: elasticsearch
+push-kibana: elasticsearch
