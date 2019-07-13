@@ -10,7 +10,7 @@ def do_word_counts(lines):
     count of words in an rdd of lines
 
     :param lines: lines of text
-    :type lines: rdd
+    :type lines: pyspark.RDD
 
     :return:
     :rtype: dict
@@ -21,7 +21,8 @@ def do_word_counts(lines):
               .reduceByKey(operator.add)
               )
     results = {word: count for word, count in counts.collect()}
-    util.get_logger(__name__).info('Results: {0}'.format(results))
+    util.get_logger(
+        lines.context, __name__).info('Results: {0}'.format(results))
     return results
 
 
