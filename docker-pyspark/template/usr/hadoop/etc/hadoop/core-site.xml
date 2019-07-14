@@ -17,5 +17,29 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-</configuration>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://pyspark-pytest-master:9000</value>
+  </property>
 
+  <property>
+    <name>hadoop.security.authentication</name>
+    <value>simple</value>
+  </property>
+
+  <property>
+    <name>hadoop.security.token.service.use_ip</name>
+    <value>true</value>
+  </property>
+
+  <!-- 
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value></value>
+  </property>
+  <property>
+    <name>io.file.buffer.size</name>
+    <value>65536</value>
+  </property>
+  -->
+</configuration>

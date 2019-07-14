@@ -17,6 +17,58 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
 
+    <!-- Enable dynamic created containers to register as datanodes -->
+    <property>
+      <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
+      <value>false</value>
+    </property>
+
+  <!--
+  <property>
+    <name>dfs.namenode.rpc-address</name>
+    <value>pyspark-master:8020</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.http-address</name>
+    <value>pyspark-master:50070</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.https-address</name>
+    <value>pyspark-master:50470</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:///hadoop/hdfs</value>
+  </property>
+
+  <property>
+    <name>dfs.name.dir</name>
+    <value>/hadoop/namenode</value>
+  </property>
+
+  <property>
+    <name>dfs.data.dir</name>
+    <value>/hadoop/hdfs</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:///hadoop/var/namenode</value>
+  </property>
+
+  <property>
+    <name>dfs.permissions.superusergroup</name>
+    <value>hadoop</value>
+    <description>The name of the group of super-users.</description>
+  </property>
+  -->
 </configuration>
 

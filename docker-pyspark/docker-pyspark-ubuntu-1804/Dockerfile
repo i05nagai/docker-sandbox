@@ -31,7 +31,7 @@ RUN \
 # HADOOP
 #
 ENV HADOOP_VERSION=2.7.3
-ENV HADOOP_HOME=/usr/hadoop-$HADOOP_VERSION
+ENV HADOOP_HOME=/usr/hadoop
 ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 ENV PATH=$PATH:$HADOOP_HOME/bin
 RUN \
@@ -39,6 +39,7 @@ RUN \
         "http://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz" \
         | gunzip \
         | tar -x -C /usr/ \
+        | mv /usr/hadoop-$HADOOP_VERSION /usr/hadoop \
     && rm -rf $HADOOP_HOME/share/doc
 
 #
