@@ -47,7 +47,10 @@ def group_by_age(spark, filename):
 
 
 def main():
-    spark_conf = util.create_spark_conf()
+    config = [
+        ('spark.master', 'yarn'),
+    ]
+    spark_conf = util.create_spark_conf(config)
     sc = util.get_or_create_spark_context(spark_conf)
     spark = util.get_or_create_spark_session(sc)
 
