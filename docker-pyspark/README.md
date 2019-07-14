@@ -68,8 +68,6 @@ If you are unable to access HDFS from pyspark, try running pyspark with the `--m
 
 If you are unable to access the HTTP SparkUI, verify that the open ports are redirected from your virtual machine to your host machine. Under VirtualBox, see the machine's `Settings > Network > Port Forwarding`.
 
-## Reference
-
 
 ## Updating Docker images
 
@@ -80,3 +78,10 @@ For instance, if the version of Hadoop is `2.7.3` and version of Spark is `2.1.2
 git tag -a spark-2.1.2-hadoop-2.7.3
 git push origin spark-2.1.2-hadoop-2.7.3
 ```
+
+## Reference
+- [lresende/docker\-yarn\-cluster: Apache Yarn cluster docker image](https://github.com/lresende/docker-yarn-cluster)
+- [pyspark package — PySpark 2\.4\.0 documentation](https://spark.apache.org/docs/2.4.0/api/python/pyspark.html)
+- [Overview \- Spark 2\.4\.3 Documentation](https://spark.apache.org/docs/latest/index.html)
+- [Configuration \- Spark 2\.4\.3 Documentation](https://spark.apache.org/docs/latest/configuration.html)
+- https://medium.com/@marcovillarreal_40011/creating-a-spark-standalone-cluster-with-docker-and-docker-compose-ba9d743a157f
