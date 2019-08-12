@@ -14,3 +14,6 @@ RUN \
 
 RUN \
     npm install -g serverless
+
+RUN \
+    npm install -g serverless-artillery --unsafe-perm=true --allow-root
