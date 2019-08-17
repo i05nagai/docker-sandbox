@@ -10,20 +10,22 @@ from __future__ import print_function
 import pyspark
 import os
 
-from . import wordcount
-from . import util
+import projectname.wordcount as wordcount
+import projectname.util as util
 
 
 def word_counts(sc, filename):
     """word_counts
 
+    :param sc:
+    :type sc: pyspark.SparkContext
     :param filename:
 
     :return: word and counts.
     :rtype: dict
     """
 
-    lines = sc.textFile(filename, 1)
+    lines = sc.textFile(filename, minPartitions=5)
     results = wordcount.do_word_counts(lines)
     return results
 
@@ -31,20 +33,26 @@ def word_counts(sc, filename):
 def group_by_age(spark, filename):
     """word_counts
 
+    :param spark:
+    :type spark: pyspark.sql.SparkSession
     :param filename:
 
     :return: word and counts.
     :rtype: dict
     """
 
-    df = spark.read.option('header', 'true').csv(path_to_csv)
-    results = wordcount.do_gorup_by_age(df)
+    df = spark.read.option('header', 'true').csv(filename)
+    results = wordcount.do_group_by_age(df)
     return results
 
 
-if __name__ == "__main__":
-    sc = util.create_spark_context()
-    spark = pyspark.sql.SparkSession(sc)
+def main():
+    config = [
+        ('spark.master', 'yarn'),
+    ]
+    spark_conf = util.create_spark_conf(config)
+    sc = util.get_or_create_spark_context(spark_conf)
+    spark = util.get_or_create_spark_session(sc)
 
     path_to_this_dir = os.path.abspath(os.path.dirname(__file__))
     path_to_data_dir = os.path.join(path_to_this_dir, '../data')
@@ -52,3 +60,7 @@ if __name__ == "__main__":
     path_to_csv = os.path.join(path_to_data_dir, 'data.csv')
     print(word_counts(sc, path_to_txt))
     print(group_by_age(spark, path_to_csv))
+
+
+if __name__ == '__main__':
+    main()

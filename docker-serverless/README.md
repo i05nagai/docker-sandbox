@@ -16,5 +16,11 @@ serverless create --template aws-python3 --path aws-python3 --name awspython3
 serverless remove
 ```
 
+
+```
+slsart script
+```
+
 ## Reference
 https://serverless.com/framework/docs/providers/aws/guide/quick-start/
+- [Nordstrom/serverless\-artillery: Combine serverless with artillery and you get serverless\-artillery for instant, cheap, and easy performance testing at scale\.](https://github.com/Nordstrom/serverless-artillery)

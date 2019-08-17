@@ -1,0 +1,246 @@
++ set -e
++ export HADOOP_PREFIX=/usr/hadoop
++ HADOOP_PREFIX=/usr/hadoop
++ source /usr/hadoop/etc/hadoop/hadoop-env.sh
+++ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+++ JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+++ export HADOOP_CONF_DIR=/usr/hadoop/etc/hadoop
+++ HADOOP_CONF_DIR=/usr/hadoop/etc/hadoop
+++ for f in '$HADOOP_HOME/contrib/capacity-scheduler/*.jar'
+++ '[' '' ']'
+++ export 'HADOOP_CLASSPATH=/usr/hadoop/contrib/capacity-scheduler/*.jar'
+++ HADOOP_CLASSPATH='/usr/hadoop/contrib/capacity-scheduler/*.jar'
+++ export 'HADOOP_OPTS= -Djava.net.preferIPv4Stack=true'
+++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true'
+++ export 'HADOOP_NAMENODE_OPTS=-Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender '
+++ HADOOP_NAMENODE_OPTS='-Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender '
+++ export 'HADOOP_DATANODE_OPTS=-Dhadoop.security.logger=ERROR,RFAS '
+++ HADOOP_DATANODE_OPTS='-Dhadoop.security.logger=ERROR,RFAS '
+++ export 'HADOOP_SECONDARYNAMENODE_OPTS=-Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender '
+++ HADOOP_SECONDARYNAMENODE_OPTS='-Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender '
+++ export HADOOP_NFS3_OPTS=
+++ HADOOP_NFS3_OPTS=
+++ export 'HADOOP_PORTMAP_OPTS=-Xmx512m '
+++ HADOOP_PORTMAP_OPTS='-Xmx512m '
+++ export 'HADOOP_CLIENT_OPTS=-Xmx512m '
+++ HADOOP_CLIENT_OPTS='-Xmx512m '
+++ export HADOOP_SECURE_DN_USER=
+++ HADOOP_SECURE_DN_USER=
+++ export HADOOP_SECURE_DN_LOG_DIR=/
+++ HADOOP_SECURE_DN_LOG_DIR=/
+++ export HADOOP_PID_DIR=
+++ HADOOP_PID_DIR=
+++ export HADOOP_SECURE_DN_PID_DIR=
+++ HADOOP_SECURE_DN_PID_DIR=
+++ export HADOOP_IDENT_STRING=
+++ HADOOP_IDENT_STRING=
++ rm -f /tmp/yarn--resourcemanager.pid
++ cd /usr/hadoop/share/hadoop/common
++ cd -
+/tmp/repository/opt/local/pyspark
++ /usr/sbin/sshd
+Could not load host key: /etc/ssh/ssh_host_ecdsa_key
+Could not load host key: /etc/ssh/ssh_host_ed25519_key
++ [[ -namenode = \-\n\a\m\e\n\o\d\e ]]
++ /usr/hadoop/sbin/start-dfs.sh
++ usage='Usage: start-dfs.sh [-upgrade|-rollback] [other options such as -clusterId]'
+++ dirname /usr/hadoop/sbin/start-dfs.sh
++ bin=/usr/hadoop/sbin
+++ cd /usr/hadoop/sbin
+++ pwd
++ bin=/usr/hadoop/sbin
++ DEFAULT_LIBEXEC_DIR=/usr/hadoop/sbin/../libexec
++ HADOOP_LIBEXEC_DIR=/usr/hadoop/sbin/../libexec
++ . /usr/hadoop/sbin/../libexec/hdfs-config.sh
++++ which /usr/hadoop/sbin/start-dfs.sh
+++ bin=/usr/hadoop/sbin/start-dfs.sh
++++ dirname /usr/hadoop/sbin/start-dfs.sh
+++ bin=/usr/hadoop/sbin
++++ cd /usr/hadoop/sbin
++++ pwd
+++ bin=/usr/hadoop/sbin
+++ DEFAULT_LIBEXEC_DIR=/usr/hadoop/sbin/../libexec
+++ HADOOP_LIBEXEC_DIR=/usr/hadoop/sbin/../libexec
+++ '[' -e /usr/hadoop/sbin/../libexec/hadoop-config.sh ']'
+++ . /usr/hadoop/sbin/../libexec/hadoop-config.sh
++++ this=/usr/hadoop/sbin/../libexec/hadoop-config.sh
++++++ dirname -- /usr/hadoop/sbin/../libexec/hadoop-config.sh
+++++ cd -P -- /usr/hadoop/sbin/../libexec
+++++ pwd -P
++++ common_bin=/usr/hadoop/libexec
+++++ basename -- /usr/hadoop/sbin/../libexec/hadoop-config.sh
++++ script=hadoop-config.sh
++++ this=/usr/hadoop/libexec/hadoop-config.sh
++++ '[' -f /usr/hadoop/libexec/hadoop-layout.sh ']'
++++ HADOOP_COMMON_DIR=share/hadoop/common
++++ HADOOP_COMMON_LIB_JARS_DIR=share/hadoop/common/lib
++++ HADOOP_COMMON_LIB_NATIVE_DIR=lib/native
++++ HDFS_DIR=share/hadoop/hdfs
++++ HDFS_LIB_JARS_DIR=share/hadoop/hdfs/lib
++++ YARN_DIR=share/hadoop/yarn
++++ YARN_LIB_JARS_DIR=share/hadoop/yarn/lib
++++ MAPRED_DIR=share/hadoop/mapreduce
++++ MAPRED_LIB_JARS_DIR=share/hadoop/mapreduce/lib
+++++ cd -P -- /usr/hadoop/libexec/..
+++++ pwd -P
++++ HADOOP_DEFAULT_PREFIX=/usr/hadoop
++++ HADOOP_PREFIX=/usr/hadoop
++++ export HADOOP_PREFIX
++++ '[' 0 -gt 1 ']'
++++ '[' 0 -gt 1 ']'
++++ HADOOP_LOGLEVEL=INFO
++++ '[' -e /usr/hadoop/conf/hadoop-env.sh ']'
++++ DEFAULT_CONF_DIR=etc/hadoop
++++ export HADOOP_CONF_DIR=/usr/hadoop/etc/hadoop
++++ HADOOP_CONF_DIR=/usr/hadoop/etc/hadoop
++++ [[ '' != '' ]]
++++ '[' 0 -gt 1 ']'
++++ [[ '' != '' ]]
++++ '[' -f /usr/hadoop/etc/hadoop/hadoop-env.sh ']'
++++ . /usr/hadoop/etc/hadoop/hadoop-env.sh
+++++ export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+++++ JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+++++ export HADOOP_CONF_DIR=/usr/hadoop/etc/hadoop
+++++ HADOOP_CONF_DIR=/usr/hadoop/etc/hadoop
+++++ for f in '$HADOOP_HOME/contrib/capacity-scheduler/*.jar'
+++++ '[' '/usr/hadoop/contrib/capacity-scheduler/*.jar' ']'
+++++ export 'HADOOP_CLASSPATH=/usr/hadoop/contrib/capacity-scheduler/*.jar:/usr/hadoop/contrib/capacity-scheduler/*.jar'
+++++ HADOOP_CLASSPATH='/usr/hadoop/contrib/capacity-scheduler/*.jar:/usr/hadoop/contrib/capacity-scheduler/*.jar'
+++++ export 'HADOOP_OPTS= -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true'
+++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true'
+++++ export 'HADOOP_NAMENODE_OPTS=-Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender '
+++++ HADOOP_NAMENODE_OPTS='-Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender '
+++++ export 'HADOOP_DATANODE_OPTS=-Dhadoop.security.logger=ERROR,RFAS -Dhadoop.security.logger=ERROR,RFAS '
+++++ HADOOP_DATANODE_OPTS='-Dhadoop.security.logger=ERROR,RFAS -Dhadoop.security.logger=ERROR,RFAS '
+++++ export 'HADOOP_SECONDARYNAMENODE_OPTS=-Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender '
+++++ HADOOP_SECONDARYNAMENODE_OPTS='-Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender '
+++++ export HADOOP_NFS3_OPTS=
+++++ HADOOP_NFS3_OPTS=
+++++ export 'HADOOP_PORTMAP_OPTS=-Xmx512m -Xmx512m '
+++++ HADOOP_PORTMAP_OPTS='-Xmx512m -Xmx512m '
+++++ export 'HADOOP_CLIENT_OPTS=-Xmx512m -Xmx512m '
+++++ HADOOP_CLIENT_OPTS='-Xmx512m -Xmx512m '
+++++ export HADOOP_SECURE_DN_USER=
+++++ HADOOP_SECURE_DN_USER=
+++++ export HADOOP_SECURE_DN_LOG_DIR=/
+++++ HADOOP_SECURE_DN_LOG_DIR=/
+++++ export HADOOP_PID_DIR=
+++++ HADOOP_PID_DIR=
+++++ export HADOOP_SECURE_DN_PID_DIR=
+++++ HADOOP_SECURE_DN_PID_DIR=
+++++ export HADOOP_IDENT_STRING=
+++++ HADOOP_IDENT_STRING=
++++ cygwin=false
++++ case "$(uname)" in
+++++ uname
+++++ /sbin/sysctl -n net.ipv6.bindv6only
++++ bindv6only=0
++++ '[' -n 0 ']'
++++ '[' 0 -eq 1 ']'
++++ export MALLOC_ARENA_MAX=4
++++ MALLOC_ARENA_MAX=4
++++ [[ -z /usr/lib/jvm/java-1.8.0-openjdk ]]
++++ JAVA=/usr/lib/jvm/java-1.8.0-openjdk/bin/java
++++ JAVA_HEAP_MAX=-Xmx1000m
++++ '[' '' '!=' '' ']'
++++ CLASSPATH=/usr/hadoop/etc/hadoop
++++ IFS=
++++ '[' '' = '' ']'
++++ '[' -d /usr/hadoop/share/hadoop/common ']'
++++ export HADOOP_COMMON_HOME=/usr/hadoop
++++ HADOOP_COMMON_HOME=/usr/hadoop
++++ '[' -d /usr/hadoop/share/hadoop/common/webapps ']'
++++ '[' -d /usr/hadoop/share/hadoop/common/lib ']'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*'
++++ '[' '' = '' ']'
++++ HADOOP_LOG_DIR=/usr/hadoop/logs
++++ '[' '' = '' ']'
++++ HADOOP_LOGFILE=hadoop.log
++++ '[' '' = '' ']'
++++ HADOOP_POLICYFILE=hadoop-policy.xml
++++ unset IFS
++++ '[' -d /usr/hadoop/build/native -o -d /usr/hadoop/lib/native ']'
++++ '[' -d /usr/hadoop/lib/native ']'
++++ '[' x '!=' x ']'
++++ JAVA_LIBRARY_PATH=/usr/hadoop/lib/native
++++ TOOL_PATH='/usr/hadoop/share/hadoop/tools/lib/*'
++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/usr/hadoop/logs'
++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/usr/hadoop/logs -Dhadoop.log.file=hadoop.log'
++++ '[' false = true ']'
++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/usr/hadoop/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/usr/hadoop'
++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/usr/hadoop/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/usr/hadoop -Dhadoop.id.str='
++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/usr/hadoop/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/usr/hadoop -Dhadoop.id.str= -Dhadoop.root.logger=INFO,console'
++++ '[' x/usr/hadoop/lib/native '!=' x ']'
++++ false
++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/usr/hadoop/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/usr/hadoop -Dhadoop.id.str= -Dhadoop.root.logger=INFO,console -Djava.library.path=/usr/hadoop/lib/native'
++++ export LD_LIBRARY_PATH=:/usr/hadoop/lib/native
++++ LD_LIBRARY_PATH=:/usr/hadoop/lib/native
++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/usr/hadoop/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/usr/hadoop -Dhadoop.id.str= -Dhadoop.root.logger=INFO,console -Djava.library.path=/usr/hadoop/lib/native -Dhadoop.policy.file=hadoop-policy.xml'
++++ HADOOP_OPTS=' -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/usr/hadoop/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/usr/hadoop -Dhadoop.id.str= -Dhadoop.root.logger=INFO,console -Djava.library.path=/usr/hadoop/lib/native -Dhadoop.policy.file=hadoop-policy.xml -Djava.net.preferIPv4Stack=true'
++++ '[' '' = '' ']'
++++ '[' -d /usr/hadoop/share/hadoop/hdfs ']'
++++ export HADOOP_HDFS_HOME=/usr/hadoop
++++ HADOOP_HDFS_HOME=/usr/hadoop
++++ '[' -d /usr/hadoop/share/hadoop/hdfs/webapps ']'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*:/usr/hadoop/share/hadoop/hdfs'
++++ '[' -d /usr/hadoop/share/hadoop/hdfs/lib ']'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*:/usr/hadoop/share/hadoop/hdfs:/usr/hadoop/share/hadoop/hdfs/lib/*'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*:/usr/hadoop/share/hadoop/hdfs:/usr/hadoop/share/hadoop/hdfs/lib/*:/usr/hadoop/share/hadoop/hdfs/*'
++++ '[' '' = '' ']'
++++ '[' -d /usr/hadoop/share/hadoop/yarn ']'
++++ export HADOOP_YARN_HOME=/usr/hadoop
++++ HADOOP_YARN_HOME=/usr/hadoop
++++ '[' -d /usr/hadoop/share/hadoop/yarn/webapps ']'
++++ '[' -d /usr/hadoop/share/hadoop/yarn/lib ']'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*:/usr/hadoop/share/hadoop/hdfs:/usr/hadoop/share/hadoop/hdfs/lib/*:/usr/hadoop/share/hadoop/hdfs/*:/usr/hadoop/share/hadoop/yarn/lib/*'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*:/usr/hadoop/share/hadoop/hdfs:/usr/hadoop/share/hadoop/hdfs/lib/*:/usr/hadoop/share/hadoop/hdfs/*:/usr/hadoop/share/hadoop/yarn/lib/*:/usr/hadoop/share/hadoop/yarn/*'
++++ '[' '' = '' ']'
++++ '[' -d /usr/hadoop/share/hadoop/mapreduce ']'
++++ export HADOOP_MAPRED_HOME=/usr/hadoop
++++ HADOOP_MAPRED_HOME=/usr/hadoop
++++ '[' /usr/hadoop/share/hadoop/mapreduce '!=' /usr/hadoop/share/hadoop/yarn ']'
++++ '[' -d /usr/hadoop/share/hadoop/mapreduce/webapps ']'
++++ '[' -d /usr/hadoop/share/hadoop/mapreduce/lib ']'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*:/usr/hadoop/share/hadoop/hdfs:/usr/hadoop/share/hadoop/hdfs/lib/*:/usr/hadoop/share/hadoop/hdfs/*:/usr/hadoop/share/hadoop/yarn/lib/*:/usr/hadoop/share/hadoop/yarn/*:/usr/hadoop/share/hadoop/mapreduce/lib/*'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*:/usr/hadoop/share/hadoop/hdfs:/usr/hadoop/share/hadoop/hdfs/lib/*:/usr/hadoop/share/hadoop/hdfs/*:/usr/hadoop/share/hadoop/yarn/lib/*:/usr/hadoop/share/hadoop/yarn/*:/usr/hadoop/share/hadoop/mapreduce/lib/*:/usr/hadoop/share/hadoop/mapreduce/*'
++++ [[ /usr/hadoop/contrib/capacity-scheduler/*.jar:/usr/hadoop/contrib/capacity-scheduler/*.jar != '' ]]
++++ [[ '' = '' ]]
++++ '[' '' '!=' '' ']'
++++ CLASSPATH='/usr/hadoop/etc/hadoop:/usr/hadoop/share/hadoop/common/lib/*:/usr/hadoop/share/hadoop/common/*:/usr/hadoop/share/hadoop/hdfs:/usr/hadoop/share/hadoop/hdfs/lib/*:/usr/hadoop/share/hadoop/hdfs/*:/usr/hadoop/share/hadoop/yarn/lib/*:/usr/hadoop/share/hadoop/yarn/*:/usr/hadoop/share/hadoop/mapreduce/lib/*:/usr/hadoop/share/hadoop/mapreduce/*:/usr/hadoop/contrib/capacity-scheduler/*.jar:/usr/hadoop/contrib/capacity-scheduler/*.jar'
++ [[ 0 -ge 1 ]]
++ nameStartOpt=' '
+++ /usr/hadoop/bin/hdfs getconf -namenodes
++ NAMENODES=pyspark-master
++ echo 'Starting namenodes on [pyspark-master]'
+Starting namenodes on [pyspark-master]
++ /usr/hadoop/sbin/hadoop-daemons.sh --config /usr/hadoop/etc/hadoop --hostnames pyspark-master --script /usr/hadoop/sbin/hdfs start namenode
+pyspark-master: Error: JAVA_HOME is not set and could not be found.
++ '[' -n '' ']'
++ /usr/hadoop/sbin/hadoop-daemons.sh --config /usr/hadoop/etc/hadoop --script /usr/hadoop/sbin/hdfs start datanode
+localhost: Error: JAVA_HOME is not set and could not be found.
+++ /usr/hadoop/bin/hdfs getconf -secondarynamenodes
++ SECONDARY_NAMENODES=0.0.0.0
++ '[' -n 0.0.0.0 ']'
++ echo 'Starting secondary namenodes [0.0.0.0]'
+Starting secondary namenodes [0.0.0.0]
++ /usr/hadoop/sbin/hadoop-daemons.sh --config /usr/hadoop/etc/hadoop --hostnames 0.0.0.0 --script /usr/hadoop/sbin/hdfs start secondarynamenode
+0.0.0.0: Error: JAVA_HOME is not set and could not be found.
+++ /usr/hadoop/bin/hdfs getconf -confKey dfs.namenode.shared.edits.dir
++ SHARED_EDITS_DIR=
++ case "$SHARED_EDITS_DIR" in
+++ /usr/hadoop/bin/hdfs getconf -confKey dfs.ha.automatic-failover.enabled
++ AUTOHA_ENABLED=false
+++ tr A-Z a-z
+++ echo false
++ '[' false = true ']'
++ /usr/hadoop/sbin/start-yarn.sh
+starting yarn daemons
+starting resourcemanager, logging to /usr/hadoop/logs/yarn--resourcemanager-pyspark-master.out
+localhost: Error: JAVA_HOME is not set and could not be found.
++ [[ -namenode = \-\d\a\t\a\n\o\d\e ]]
++ [[ '' = \-\d\a\t\a\n\o\d\e ]]
++ [[ -namenode = \-\d ]]
++ [[ '' = \-\d ]]
++ [[ -namenode = \-\b\a\s\h ]]
++ [[ '' = \-\b\a\s\h ]]

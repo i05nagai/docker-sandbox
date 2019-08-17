@@ -31,7 +31,7 @@ RUN \
 # HADOOP
 #
 ENV HADOOP_VERSION=2.7.3
-ENV HADOOP_HOME=/usr/hadoop-$HADOOP_VERSION
+ENV HADOOP_HOME=/usr/hadoop
 ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 ENV PATH=$PATH:$HADOOP_HOME/bin
 RUN \
@@ -39,6 +39,7 @@ RUN \
         "http://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz" \
         | gunzip \
         | tar -x -C /usr/ \
+    && mv /usr/hadoop-$HADOOP_VERSION /usr/hadoop \
     && rm -rf $HADOOP_HOME/share/doc
 
 #
@@ -70,6 +71,28 @@ ENV PYTHONPATH="$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.7-src.zip"
 RUN \
     pip3.6 install ipython
 
+
+RUN \
+    yum install -y \
+        which
+
+#
+# for yarn
+#
+RUN \
+    yum install -y \
+        openssh-server \
+        openssh-clients
+RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key
+RUN ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
+RUN ssh-keygen -q -N "" -t rsa -f /root/.ssh/id_rsa
+RUN cp /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
+RUN \
+    echo "export JAVA_HOME=${JAVA_HOME}" >> /root/.bashrc
+
+RUN \
+    yum install -y \
+        vim
 
 WORKDIR /$SPARK_HOME
 CMD ["bin/spark-class", "org.apache.spark.deploy.master.Master"]

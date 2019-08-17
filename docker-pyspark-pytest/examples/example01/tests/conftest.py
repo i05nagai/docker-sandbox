@@ -5,8 +5,9 @@ import pytest
 
 def quiet_py4j():
     """ turn down spark logging for the test context """
-    logger = logging.getLogger('py4j')
-    logger.setLevel(logging.WARN)
+    # logger = logging.getLogger('py4j')
+    # logger.setLevel(logging.WARN)
+    pass
 
 
 @pytest.fixture(scope="session")
