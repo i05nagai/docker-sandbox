@@ -1,0 +1,99 @@
+FROM ubuntu:16.04
+MAINTAINER i05nagai
+
+# Install all OS dependencies for notebook server that starts but lacks all
+# features (e.g., download as all possible file formats)
+RUN apt-get update \
+    && apt-get -yq \
+        dist-upgrade \
+    && apt-get install -yq --no-install-recommends \
+        curl \
+        bzip2 \
+        ca-certificates \
+        sudo \
+        locales \
+        fonts-liberation
+
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
+    && locale-gen
+
+#
+# install supervisord
+#
+
+
+#
+# Configure environment
+#
+ENV CONDA_DIR=/opt/conda \
+    SHELL=/bin/bash \
+    LC_ALL=en_US.UTF-8 \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US.UTF-8 \
+    JUPYTER_USER=jupyter \
+    JUPYTER_UID=1000 \
+    JUPYTER_GID=100
+ENV PATH=$CONDA_DIR/bin:$PATH \
+    HOME=/home/$JUPYTER_USER
+
+RUN useradd -m -s /bin/bash -N -u $JUPYTER_UID $JUPYTER_USER \
+    && mkdir -p $CONDA_DIR \
+    && chown $JUPYTER_USER:$JUPYTER_GID $CONDA_DIR \
+    && chmod g+w /etc/passwd /etc/group \
+    && fix-permissions $HOME \
+    && fix-permissions $CONDA_DIR
+
+USER $JUPYTER_UID
+
+RUN mkdir /home/$JUPYTER_USER/work \
+    && fix-permissions /home/$JUPYTER_USER
+
+#
+# Install conda as jupyter user and check the md5 sum provided on the download site
+#
+ENV MINICONDA_VERSION 4.3.30
+RUN cd /tmp \
+    && curl --quiet -L -O https://repo.continuum.io/miniconda/Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh \
+    && echo "0b80a152332a4ce5250f3c09589c7a81 *Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh" | md5sum -c - \
+    && /bin/bash Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh -f -b -p $CONDA_DIR \
+    && rm Miniconda3-${MINICONDA_VERSION}-Linux-x86_64.sh \
+    && $CONDA_DIR/bin/conda config --system --prepend channels conda-forge \
+    && $CONDA_DIR/bin/conda config --system --set auto_update_conda false \
+    && $CONDA_DIR/bin/conda config --system --set show_channel_urls true \
+    && $CONDA_DIR/bin/conda update --all --quiet --yes \
+    && conda clean -tipsy \
+    && rm -rf /home/$JUPYTEr_USER/.cache/yarn \
+    && fix-permissions $CONDA_DIR \
+    && fix-permissions /home/$JUPYTER_USER
+
+# Install Jupyter Notebook and Hub
+# Issue #589: Force tornado < 5.0 until various zmq dependencies are resolved upstream
+RUN conda install --quiet --yes \
+    && conda clean -tipsy \
+    && jupyter labextension install @jupyterlab/hub-extension@^0.8.0 \
+    && npm cache clean \
+    && rm -rf $CONDA_DIR/share/jupyter/lab/staging \
+    && rm -rf /home/$JUPYTER_USER/.cache/yarn \
+    && fix-permissions $CONDA_DIR \
+    && fix-permissions /home/$JUPYTER_USER 
+
+
+USER root
+
+EXPOSE 8888
+WORKDIR $HOME
+
+# Configure container startup
+ENTRYPOINT ["tini", "--"]
+CMD ["start-notebook.sh"]
+
+# Add local files as late as possible to avoid cache busting
+COPY start.sh /usr/local/bin/
+COPY start-notebook.sh /usr/local/bin/
+COPY start-singleuser.sh /usr/local/bin/
+COPY jupyter_notebook_config.py /etc/jupyter/
+RUN fix-permissions /etc/jupyter/
+
+# Switch back to jovyan to avoid accidental container runs as root
+USER $JUPYTER_UID
+
