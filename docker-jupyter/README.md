@@ -1,5 +1,11 @@
 ## Overview
 
+## Minimal-jupyter
+[Jupyter Docker Stacks — docker\-stacks latest documentation](http://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)
+
+
+## Pyspark
+[Image Specifics — docker\-stacks latest documentation](http://jupyter-docker-stacks.readthedocs.io/en/latest/using/specifics.html#apache-spark)
 
 #### LDAP
 - [LDAP authentication using pam\_ldap and nss\_ldap](http://www.tldp.org/HOWTO/archived/LDAP-Implementation-HOWTO/pamnss.html)
