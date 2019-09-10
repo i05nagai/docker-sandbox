@@ -1,7 +1,10 @@
-FROM splunk/splunk
+# FROM splunk/splunk
 
-# FROM ubuntu:18.04
-# 
+FROM ubuntu:18.04
+
+COPY ./splunk-7.3.1-bd63e13aa157-Linux-x86_64.tgz /tmp/splunk-7.3.1-bd63e13aa157-Linux-x86_64.tgz
+COPY ./template /
+
 # ARG SPLUNK_BUILD_URL
 # COPY splunk/common-files/make-minimal-exclude.py /tmp
 # 
