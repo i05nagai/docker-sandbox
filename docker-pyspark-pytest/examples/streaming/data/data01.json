@@ -1,0 +1,14 @@
+{
+  "json_col": {
+    "str": "str1_val",
+    "num": 1,
+    "str_array": ["1", "2"],
+    "num_array": [1, 2],
+    "dict": {
+      "dict_str": "str1_val",
+      "dict_num": 1,
+      "dict_str_array": ["1", "2"],
+      "dict_num_array": [1, 2]
+    }
+  }
+}
