@@ -27,6 +27,47 @@ def returnTestGlobalVariable() {
 	def globalVariable = 2
 }
 
+def runMatcher() {
+	def moduleList = []
+	def files = ["./foo.groovy", "/usr/name/foo.groovy", "./.", ""]
+	for (path in files) {
+		def matcher = path =~ /(.+?)\/.*/
+		println "File: " + (new File(path).getParentFile().getPath())
+		if (matcher.size()) {
+			println "matcher[0][1]: " + matcher[0][1]
+		  moduleList.push(matcher[0][1])
+		}
+	}
+	return moduleList
+}
+
+def runMatcher2() {
+	def moduleList = []
+	def files = findFiles(glob: '*/*.groovy')
+	for (path in files) {
+		def matcher = path =~ /(.+?)\/.*/
+		println "File: " + (new File(path).getParentFile().getPath())
+		if (matcher.size()) {
+			println "matcher[0][1]: " + matcher[0][1]
+		  moduleList.push(matcher[0][1])
+		}
+	}
+	return moduleList
+}
+
+def runStringTokenize() {
+	"echo \n'aaa' dddd   eeeefdsa".tokenize()
+}
+
+def runFindFile() {
+	findFile("dir000/dir010/file010.groovy")
+}
+
+def runClosure(Closure closure) {
+	closure()
+}
+
+
 println "hello" 
 
 byte  b = 1
@@ -59,3 +100,22 @@ println returnTestSubstitute()
 println returnTestClass()
 println returnTestGlobalVariable()
 println globalVariable
+
+// http://www.tothenew.com/blog/groovy-tokenize-vs-split/
+println "runStringTokenize"
+println runStringTokenize()
+
+println "runFindFile"
+println runFindFile()
+
+println "runClosure"
+for (num in [1, 2, 3, 4, 5]) {
+    println num
+    runClosure() {
+        continue
+    }
+    println num
+}
+
+println runMatcher()
+println runMatcher2()
