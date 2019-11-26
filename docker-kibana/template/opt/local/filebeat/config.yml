@@ -1,0 +1,30 @@
+filebeat:
+  config:
+    modules:
+      path: /etc/filebeat/modules.d/*.yml
+      reload:
+        enabled: false
+  inputs:
+  - enabled: false
+    paths:
+    - /var/log/*.log
+    type: log
+output:
+  elasticsearch:
+    hosts:
+    - elasticsearch:9200
+path:
+  config: /etc/filebeat
+  data: /var/lib/filebeat
+  home: /usr/share/filebeat
+  logs: /var/log/filebeat
+processors:
+- add_host_metadata: null
+- add_cloud_metadata: null
+setup:
+  kibana: null
+  template:
+    settings:
+      index:
+        number_of_shards: 1
+
