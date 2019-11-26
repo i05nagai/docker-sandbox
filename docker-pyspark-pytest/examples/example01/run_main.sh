@@ -12,6 +12,6 @@ spark-submit \
 
 # --files  
 # --py-files pythonfiles.py
-# --conf "spark.executor.extraJavaOptions=-Djava.security.auth.login.config=./staging-jaas.conf" 
-# --driver-java-options "-Djava.security.auth.login.config=./staging-jaas.conf" 
+# --conf "spark.executor.extraJavaOptions=-Djava.security.auth.login.config=./jaas.conf" 
+# --driver-java-options "-Djava.security.auth.login.config=./jaas.conf" 
 
