@@ -1,0 +1,87 @@
+pipeline {
+    agent {
+        docker {
+            image 'ubuntu:18.04'
+        }
+    }
+    environment {
+        CI = 'true'
+    }
+    parameters {
+      string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+      string(name: 'JOB', defaultValue: 'job', description: 'This is job')
+    }
+    stages {
+        stage('Check Syntax') {
+            steps {
+                script {
+                    runReadYaml()
+                    for (num in [1, 2, 3, 4, 5]) {
+                        println "1: " + num
+                        runClosure() {
+                            println "in closure: " + num
+                            continue
+                        }
+                        println "2: " + num
+                    }
+                }
+                script {
+                  def files = findFiles(glob: 'dir/*/file0.txt')
+                  for (file in files) {
+                      println file
+                  }
+                  println files[0]
+                  println files[0].name
+                  println files[0].path
+                  println files[1]
+                  println files[1].name
+                  println files[1].path
+                }
+                script {
+                    // https://mrhaki.blogspot.com/2009/09/groovy-goodness-matchers-for-regular.html
+                    def matcher = "dir/dir01/file0.txt" =~ /dir\/(.+?)\/.*/
+                    println matcher[0]
+                    println matcher[0][0] // whole string
+                    println matcher[0][1] // matched text
+                }
+                runEcho()
+                runEcho("eeeeeeeeeeeeeeeeeeeeeeee")
+            }
+        }
+    }
+}
+
+def runScript(String script, returnStdout = false) {
+  sh(returnStdout: returnStdout,
+    script: """#!/bin/bash -l
+    set +x
+    cd \$WORKSPACE;
+    $script""").trim()
+}
+
+def sample(String var,Closure code) {
+  echo(var)
+}
+
+def runEcho() {
+  echo('runEcho: echo')
+}
+
+def runEcho(String value) {
+  echo("runEcho: echo: $value")
+}
+
+def runFindFile() {
+  // pipline utility
+  findFiles('dir/*/file0.txt')
+}
+
+def runReadYaml() {
+  // pipline utility
+  readYaml(file: 'config.yaml')
+}
+
+def runClosure(Closure closure) {
+    closure()
+}
+
