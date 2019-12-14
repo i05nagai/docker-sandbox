@@ -1,4 +1,4 @@
-#include "sample_namespace.h"
+#include "sample.h"
 
 namespace ns1 {
 
@@ -14,5 +14,8 @@ int fact(int n) {
         return n * fact(n-1);
     }
 }
-  
+
+int Derived::PublicMethod(const int value) {
+  return value + 22432423;
+}
 } // namespace ns1k

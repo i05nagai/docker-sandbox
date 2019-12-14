@@ -1,17 +1,16 @@
 #pragma once
-#include "core/base.h"
 
-namespace ns1 {
+namespace core {
   int fact(int n);
 
-  class Derived: public core::Base {
+  class Base {
   //private typedef
   private:
   //public typedef
   public:
   //public function
   public:
-    Derived(const int value): Base(value) {
+    Base(const int value): value_(value) {
     }
 
     int PublicMethod(const int value);
@@ -22,3 +21,4 @@ namespace ns1 {
     int value_;
   };
 } // namespace ns1
+

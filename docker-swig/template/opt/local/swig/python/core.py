@@ -10,9 +10,9 @@ if _swig_python_version_info < (2, 7, 0):
 
 # Import the low-level C/C++ module
 if __package__ or "." in __name__:
-    from . import _ns1
+    from . import _core
 else:
-    import _ns1
+    import _core
 
 try:
     import builtins as __builtin__
@@ -61,36 +61,22 @@ class _SwigNonDynamicMeta(type):
     __setattr__ = _swig_setattr_nondynamic_class_variable(type.__setattr__)
 
 
+
+def fact(n):
+    return _core.fact(n)
 class Base(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
 
     def __init__(self, value):
-        _ns1.Base_swiginit(self, _ns1.new_Base(value))
+        _core.Base_swiginit(self, _core.new_Base(value))
 
     def PublicMethod(self, value):
-        return _ns1.Base_PublicMethod(self, value)
-    __swig_destroy__ = _ns1.delete_Base
+        return _core.Base_PublicMethod(self, value)
+    __swig_destroy__ = _core.delete_Base
 
-# Register Base in _ns1:
-_ns1.Base_swigregister(Base)
-
-
-def fact(n):
-    return _ns1.fact(n)
-class Derived(Base):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
-    __repr__ = _swig_repr
-
-    def __init__(self, value):
-        _ns1.Derived_swiginit(self, _ns1.new_Derived(value))
-
-    def PublicMethod(self, value):
-        return _ns1.Derived_PublicMethod(self, value)
-    __swig_destroy__ = _ns1.delete_Derived
-
-# Register Derived in _ns1:
-_ns1.Derived_swigregister(Derived)
+# Register Base in _core:
+_core.Base_swigregister(Base)
 
 
 
