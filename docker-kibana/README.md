@@ -1,5 +1,10 @@
 
 
+## Usage
+
+```
+```
+
 ## Directory strcture
 
 - home

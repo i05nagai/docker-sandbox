@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    // Define the main class for the application.
+    mainClassName = 'project1.App'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+// to run test
+test {
+    useJUnitPlatform()
+}
+
+def libraryVersions = [
+        junit: (String) project.LIBRARY_VERSION_JUNIT,
+        scala: (String) project.LIBRARY_VERSION_SCALA,
+        flink: (String) project.LIBRARY_VERSION_FLINK,
+]
+
+dependencies {
+    implementation "org.apache.flink:flink-streaming-java_${libraryVersions.scala}:${libraryVersions.flink}"
+
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: libraryVersions.junit
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: libraryVersions.junit
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: libraryVersions.junit
+}

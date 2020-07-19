@@ -12,6 +12,6 @@ docker-run:
 		--name jenkins \
 		--volume /var/run/docker.sock:/var/run/docker.sock \
 		--privileged \
-		--volume ${PATH_TO_PARENT_DIR}/samples:/tmp/samples \
-		--volume ${PATH_TO_PARENT_DIR}/jenkins_home:/var/jenkins_home \
+		--volume ${PATH_TO_PARENT_DIR}samples:/tmp/samples \
+		--volume ${PATH_TO_PARENT_DIR}jenkins_home:/var/jenkins_home \
 		${IMAGE}

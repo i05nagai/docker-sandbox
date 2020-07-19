@@ -1,0 +1,114 @@
+pipeline {
+    agent {
+        docker {
+            image 'ubuntu:18.04'
+            args '-p 3000:3000 -p 5000:5000' 
+        }
+    }
+    environment {
+        CI = 'true'
+    }
+    parameters {
+    }
+    stages {
+        stage('Check Syntax') {
+            steps {
+                script {
+                    def a = ['1.1.0', '1.0.1', '1.0.2', '1.0.3', '1.0.1']
+                    a.sort()
+                    println("list: $a")
+                }
+            }
+        }
+        // stage('Build') {
+        //     input {
+        //         message "Should we continue?"
+        //         ok "Yes, we should."
+        //         submitter "alice,bob"
+        //         parameters {
+        //             string(name: 'PERSON', defaultValue: 'Mr Jenkins?', description: 'Who should I say hello to?')
+        //         }
+        //     }
+        //     steps {
+        //         sh 'echo aaaa'
+        //         script {
+        //             def variable_defined = "defined here"
+        //         }
+        //         sh 'echo aaaa'
+        //         sh "echo PERSON: ${PERSON},"
+        //         sh "echo params.PERSON: ${params.PERSON},"
+        //         sh "echo JOB: ${JOB},"
+        //         sh "echo params.JOB: ${params.JOB},"
+        //         sh "echo ENV: ${ENV},"
+        //         sh "echo params.ENV: ${params.ENV},"
+        //         sh "echo ENV2: ${ENV2},"
+        //         sh "echo params.ENV2: ${params.ENV2},"
+        //         sh "echo CI: ${CI},"
+        //         sh "echo variable_defined: ${variable_defined},"
+
+        //         // abc = runScript("echo 'aaa' | yq", true)
+        //     }
+        // }
+        // stage('Test') {
+        //     when {
+        //       allOf { expression { CI == 'true' }; branch 'master' }
+        //     }
+        //     steps {
+        //         sh 'echo aaafdsafsafdsa'
+        //     }
+        // }
+        // stage('Test2') {
+        //     when {
+        //       allOf { expression { CI == 'false' }; branch 'master' }
+        //     }
+        //     steps {
+        //         sh 'echo aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        //         sh "echo variable_defined: ${variable_defined},"
+        //     }
+        // }
+        // stage('Test3') {
+        //     when {
+        //       allOf { expression { $CI == 'false' }; branch 'master' }
+        //     }
+        //     steps {
+        //         sh 'echo aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        //         sh "echo variable_defined: ${variable_defined},"
+        //     }
+        // }
+    }
+}
+
+def runScript(String script, returnStdout = false) {
+  sh(returnStdout: returnStdout,
+    script: """#!/bin/bash -l
+    set +x
+    cd \$WORKSPACE;
+    $script""").trim()
+}
+
+def sample(String var,Closure code) {
+  echo(var)
+}
+
+def runEcho() {
+  echo('runEcho: echo')
+}
+
+def runEcho(String value) {
+  echo("runEcho: echo: $value")
+}
+
+def runFindFile() {
+  // pipline utility
+  findFiles('dir/*/file0.txt')
+}
+
+def runReadYaml() {
+  // pipline utility
+  readYaml(file: 'config.yaml')
+}
+
+def runClosure(Closure closure) {
+    closure()
+}
+

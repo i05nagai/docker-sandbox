@@ -1,0 +1,34 @@
+[
+  {
+    "friends": [
+      {
+        "id": 0,
+        "name": "Georgina Sears"
+      },
+      {
+        "id": 1,
+        "name": "Miranda Tillman"
+      },
+      {
+        "id": 2,
+        "name": "Rosario Doyle"
+      }
+    ]
+  },
+  {
+    "friends": [
+      {
+        "id": 0,
+        "name": "Manuela Noble"
+      },
+      {
+        "id": 1,
+        "name": "Aguilar Roy"
+      },
+      {
+        "id": 2,
+        "name": "Holt Espinoza"
+      }
+    ]
+  }
+]

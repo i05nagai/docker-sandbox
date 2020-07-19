@@ -36,3 +36,13 @@ docker-run-kibana:
 		--volume $(PATH_TO_PARENT_DIR)/template:/tmp/repository \
 		$(IMAGE) \
 		/bin/bash
+
+docker-run-filebeat:
+	docker run \
+		--rm \
+		-it \
+		--workdir /tmp/repository/opt/local/filebeat \
+		--network kibana \
+		--name filebeat \
+		i05nagai/filebeat-ubuntu1804:latest \
+		/bin/bash

@@ -137,6 +137,10 @@ pipeline {
 
 If I restart the instance (via http://localhost:8080/restart), the issue disappear and I'm able to create any job and I'm even able to edit it (The error 500 has disappear as well)
 
+#### Plugins
+- pipeline-utility-steps
+    - https://jenkins.io/doc/pipeline/steps/pipeline-utility-steps/
+
 ## Reference
 * https://github.com/jenkinsci/docker
 * [Getting started with the Guided Tour](https://jenkins.io/doc/pipeline/tour/getting-started/)
