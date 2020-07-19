@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "serverless-artillery": "^0.4.0"
+    "serverless-artillery": "^0.4.0",
+    "mem": ">=4.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
