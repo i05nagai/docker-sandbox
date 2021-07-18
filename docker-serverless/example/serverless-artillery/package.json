@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "serverless-artillery": "^0.4.0",
+    "serverless-artillery": "^0.5.0",
     "mem": ">=4.0.0",
     "y18n": ">=3.2.2"
   },
