@@ -1,6 +1,10 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
+
+from pyspark.sql import functions as F
+from pyspark.sql.types import StructType, StringType, StructField
+
 import operator
 from . import util
 
@@ -42,4 +46,22 @@ def do_group_by_age(lines):
               .reduceByKey(operator.add)
               )
     results = {word: count for word, count in counts.collect()}
+    return results
+
+
+def do_string_to_row(df):
+    schema = StructType().add(
+        "parent1", StructType().add(
+            "value11", StringType()
+        ).add(
+            "value12", StringType())
+    ).add(
+        "parent2", StructType().add(
+            "value21", StringType()
+        ).add(
+            "value22", StringType()
+        )
+    )
+    df = df.select(F.from_json(F.decode("value", "UTF-8"), schema).alias("value"))
+    results = [row.asDict(True) for row in df.collect()]
     return results

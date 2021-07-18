@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+// to run test
+test {
+    useJUnitPlatform()
+}
+
+def libraryVersions = [
+        junit: (String) project.LIBRARY_VERSION_JUNIT,
+]
+
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: libraryVersions.junit
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: libraryVersions.junit
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: libraryVersions.junit
+}
+
