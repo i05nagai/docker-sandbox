@@ -46,6 +46,12 @@ def group_by_age(spark, filename):
     return results
 
 
+def string_to_row(spark, filename):
+    df = spark.read.option('header', 'true').csv(filename)
+    results = wordcount.do_string_to_row(df)
+    return results
+
+
 def main():
     config = [
         ('spark.master', 'yarn'),
@@ -58,8 +64,10 @@ def main():
     path_to_data_dir = os.path.join(path_to_this_dir, '../data')
     path_to_txt = os.path.join(path_to_data_dir, 'data.txt')
     path_to_csv = os.path.join(path_to_data_dir, 'data.csv')
+    path_to_data1_txt = os.path.join(path_to_data_dir, 'data1.txt')
     print(word_counts(sc, path_to_txt))
     print(group_by_age(spark, path_to_csv))
+    print(string_to_row(spark, path_to_data1_txt))
 
 
 if __name__ == '__main__':
