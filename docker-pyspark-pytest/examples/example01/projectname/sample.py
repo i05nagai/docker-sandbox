@@ -1,5 +1,6 @@
 import pyspark
 import json
+import pyspark.sql
 import pyspark.sql.functions as f
 from pyspark.sql.types import ArrayType
 from pyspark.sql.types import BooleanType
@@ -8,7 +9,7 @@ from pyspark.sql.types import StructField
 from pyspark.sql.types import StructType
 
 
-def get_data():
+def get_data(spark):
     data = """
 [
   {
@@ -60,7 +61,6 @@ def get_data():
 ]
     """
     data_dict = json.loads(data)
-    print(data_dict)
     schema = StructType().add(
         "friends", ArrayType(
             StructType([
@@ -70,15 +70,18 @@ def get_data():
         )
     )
     df = spark.createDataFrame(data_dict, schema)
+    print(df.show(truncate=False))
+    print(df.toJSON().collect())
     return df
 
 
 def main():
-    df = get_data()
+    spark = pyspark.sql.SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
+    df = get_data(spark)
     extract_field3(df)
 
 
-def extract_field(df):
+def extract_field(spark, df):
     text = 'bbbb'
     df = spark.createDataFrame([('A$B', 'a$b$c')], ['k', 's'])
     df.select(
