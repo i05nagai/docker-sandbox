@@ -4,8 +4,7 @@
 PATH_THIS_DIR=$(cd $(dirname ${0});pwd)
 cd ${PATH_THIS_DIR}
 
-spark-submit \
-  --master "yarn" \
+PYTHONPATH=${PATH_THIS_DIR} spark-submit \
   --py-files projectname/util.py,projectname/wordcount.py \
   --deploy-mode client \
     projectname/wordcount_use.py
