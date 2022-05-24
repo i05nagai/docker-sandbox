@@ -16,16 +16,14 @@ RUN \
 #
 # PYTHON 3
 #
-ENV PYTHON_VERSION="3.5.2-2ubuntu0~16.04.4"
 # Installing given python3 version
 RUN \
     apt-get update \
     && apt-get install -y \
-        python3.5=$PYTHON_VERSION \
+        python3.8 \
         curl \
         python3-pip \
-    && pip3 install --upgrade pip==9.0.1 \
-    && /opt/local/core/build_cleanup.sh
+    && pip3 install --upgrade pip==9.0.1
 
 #
 # HADOOP
