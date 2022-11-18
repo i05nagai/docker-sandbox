@@ -8,7 +8,7 @@ RUN \
         curl
 
 ENV FLINK_HOME=/opt/flink
-ENV FLINK_VERSION=1.10.0
+ENV FLINK_VERSION=1.14.6
 ENV FLINK_URL_FILE_PATH=flink/flink-${FLINK_VERSION}/flink-${FLINK_VERSION}-bin-scala_2.11.tgz
 ENV FLINK_TGZ_URL=https://www.apache.org/dyn/closer.cgi?action=download&filename=${FLINK_URL_FILE_PATH}
 ENV PATH=${FLINK_HOME}/bin:$PATH
@@ -36,3 +36,11 @@ RUN \
     && unzip /tmp/gradle-${GRADLE_VERSION}-bin.zip -d /tmp \
     && mv /tmp/gradle-${GRADLE_VERSION} ${GRADLE_HOME} \
     && rm /tmp/gradle-${GRADLE_VERSION}-bin.zip
+
+#
+# scala
+#
+ENV SCALA_VERSION=2.13.10
+RUN \
+    curl -s "https://get.sdkman.io" | bash \
+    && bash -c "source \"$HOME/.sdkman/bin/sdkman-init.sh\" && sdk install scala ${SCALA_VERSION} && sdk install sbt"

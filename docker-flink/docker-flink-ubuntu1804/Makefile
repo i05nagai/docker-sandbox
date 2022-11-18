@@ -10,6 +10,7 @@ docker-run:
 		-it \
 		--workdir /tmp/repository/opt/local/flink \
 		--name flink \
+		-p 8081:8081 \
 		--volume $(PATH_TO_PARENT_DIR)/template/:/tmp/repository \
 		$(IMAGE) \
 		/bin/bash
