@@ -1,3 +1,4 @@
+DOCKER ?= docker
 DOCKER_IMAGE_PREFIX = i05nagai/
 DOCKER_COMMAND = gcloud docker --
 DIRNAME = $(shell basename $(shell pwd))
@@ -15,7 +16,7 @@ pre-build:
 post-build:
 
 docker-build:
-	docker build -t ${IMAGE}:${VERSION} ${DOCKER_BUILD_ARGS} -f $(DOCKER_DOCKERFILE_PATH) $(DOCKER_BUILD_PATH)
+	$(DOCKER) build -t ${IMAGE}:${VERSION} ${DOCKER_BUILD_ARGS} -f $(DOCKER_DOCKERFILE_PATH) $(DOCKER_BUILD_PATH)
 
 push: docker-push post-push
 

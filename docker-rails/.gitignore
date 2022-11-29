@@ -1,0 +1,8 @@
+cache
+
+*.log
+
+*.sqlite3
+
+master.key
+credentials.yml.enc
