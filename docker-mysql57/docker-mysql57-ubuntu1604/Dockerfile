@@ -13,11 +13,12 @@ RUN \
 
 ENV MYSQL_MAJOR=5.7 \
     MYSQL_VERSION=5.7.21-0ubuntu0.16.04.1
+
 # Install MySQL.
 RUN \
   apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-      mysql-server="${MYSQL_VERSION}" \
+      mysql-server \
   && rm -rf /var/lib/apt/lists/* \
   && sed -i 's/^\(log_error\s.*\)/# \1/' /etc/mysql/mysql.conf.d/mysqld.cnf \
   && echo "mysqld_safe &" > /tmp/config \
