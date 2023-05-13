@@ -1,1 +1,1 @@
-include ../script/make/build_docker_image.mk
+include ../../script/make/build_docker_image.mk
