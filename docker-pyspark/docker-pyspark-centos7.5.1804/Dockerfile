@@ -58,8 +58,8 @@ RUN \
     && curl --location --retry 3 \
         "https://archive.apache.org/dist/spark/spark-$SPARK_VERSION/$SPARK_PACKAGE.tgz" \
         | gunzip \
-        | tar x -C /usr/ && \
-        mv /usr/$SPARK_PACKAGE $SPARK_HOME \
+        | tar x -C /usr/ \
+    && mv /usr/$SPARK_PACKAGE $SPARK_HOME \
     && rm -rf $SPARK_HOME/examples $SPARK_HOME/ec2
 
 #
