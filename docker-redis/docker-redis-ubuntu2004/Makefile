@@ -36,6 +36,9 @@ docker-run-redis-server:
 		$(IMAGE) \
 		/bin/bash
 
+docker-run-redis-server-attach:
+	docker exec -it redis-server /bin/bash
+
 docker-run-redis-client:
 	docker run \
 		--rm \

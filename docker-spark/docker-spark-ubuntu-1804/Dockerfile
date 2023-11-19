@@ -1,43 +1,42 @@
-ARG DOCKER_IMAGE_PREFIX
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 #
 # java8
 #
 ENV \
   # Define commonly used JAVA_HOME variable
-  JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+  JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 RUN \
     apt-get update \
     # Install Java.
     && apt-get install -y \
-        openjdk-8-jdk
+        openjdk-11-jdk \
+        maven
 
 #
 # PYTHON 3
 #
-ENV PYTHON_VERSION="3.5.2-2ubuntu0~16.04.4"
 # Installing given python3 version
 RUN \
     apt-get update \
     && apt-get install -y \
-        python3.5=$PYTHON_VERSION \
+        python3.8 \
         curl \
         python3-pip \
-    && pip3 install --upgrade pip==9.0.1 \
-    && /opt/local/core/build_cleanup.sh
+    && pip3 install --upgrade pip==9.0.1
 
 #
 # HADOOP
 #
-ENV HADOOP_VERSION=2.7.3
+ENV HADOOP_VERSION=2.10.2
 ENV HADOOP_HOME=/usr/hadoop
 ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 ENV PATH=$PATH:$HADOOP_HOME/bin
+
 RUN \
     curl --location --retry 3 \
-        "http://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz" \
+        "https://dlcdn.apache.org/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz" \
         | gunzip \
         | tar -x -C /usr/ \
     && mv /usr/hadoop-$HADOOP_VERSION /usr/hadoop \
@@ -46,7 +45,7 @@ RUN \
 #
 # SPARK
 #
-ENV SPARK_VERSION=2.1.1
+ENV SPARK_VERSION=3.4.1
 ENV SPARK_PACKAGE=spark-$SPARK_VERSION-bin-without-hadoop
 ENV SPARK_HOME=/usr/spark-$SPARK_VERSION
 ENV PYSPARK_PYTHON=python3
@@ -55,7 +54,7 @@ ENV PATH=$PATH:$SPARK_HOME/bin
 
 RUN \
     curl --location --retry 3 \
-        "http://d3kbcqa49mib13.cloudfront.net/$SPARK_PACKAGE.tgz" \
+        "https://dlcdn.apache.org/spark/spark-$SPARK_VERSION/$SPARK_PACKAGE.tgz" \
         | gunzip \
         | tar x -C /usr/ \
     && mv /usr/$SPARK_PACKAGE $SPARK_HOME \

@@ -37,7 +37,7 @@ RUN \
         "http://archive.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz" \
         | gunzip \
         | tar -x -C /usr/ \
-        | mv /usr/hadoop-$HADOOP_VERSION /usr/hadoop \
+    && mv /usr/hadoop-$HADOOP_VERSION /usr/hadoop \
     && rm -rf $HADOOP_HOME/share/doc
 
 #
@@ -54,8 +54,8 @@ RUN \
     curl --location --retry 3 \
         "http://d3kbcqa49mib13.cloudfront.net/$SPARK_PACKAGE.tgz" \
         | gunzip \
-        | tar x -C /usr/ && \
-        mv /usr/$SPARK_PACKAGE $SPARK_HOME \
+        | tar x -C /usr/ \
+    && mv /usr/$SPARK_PACKAGE $SPARK_HOME \
     && rm -rf $SPARK_HOME/examples $SPARK_HOME/ec2
 
 WORKDIR /$SPARK_HOME
