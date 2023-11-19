@@ -12,8 +12,9 @@ RUN \
         python3-dev \
         curl \
         python3-venv \
+        make \
     # pip
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
     && python3 get-pip.py
 
-COPY ./templates /
+COPY ./template /
