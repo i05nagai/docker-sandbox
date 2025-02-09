@@ -1,0 +1,12 @@
+2024-11-02 07:07:49.566352900 starting process-agent
+2024-11-02 07:07:49.566533608 starting system-probe
+2024-11-02 07:07:49.566586066 starting trace-agent
+2024-11-02 07:07:49.566262525 starting agent
+2024-11-02 07:07:49.566704816 starting security-agent
+2024-11-02 07:07:52.274714568 AGENT EXITED WITH CODE 255, SIGNAL 0, KILLING CONTAINER
+2024-11-02 07:07:52.284346818 trace-agent exited with code 256, signal 15, restarting in 2 seconds
+2024-11-02 07:07:52.284368276 security-agent exited with code 256, signal 15, restarting in 2 seconds
+2024-11-02 07:07:54.813111944 system-probe exited with code 0, disabling
+2024-11-02 07:08:52.658776513 process-agent exited with code 0, disabling
+2024-11-02 07:08:52.658776513 process-agent exited with code 0, disabling
+2024-11-02 07:08:52.658776513 process-agent exited with code 0, disabling

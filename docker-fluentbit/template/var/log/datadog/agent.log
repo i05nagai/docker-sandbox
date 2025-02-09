@@ -1,0 +1,19 @@
+2024-11-02 07:07:49 UTC | CORE | INFO | (pkg/util/log/log.go:841 in func1) | Starting to load the configuration
+2024-11-02 07:07:49 UTC | CORE | WARN | (pkg/util/log/log.go:886 in func1) | Unknown environment variable: DD_GIT_REPOSITORY_URL
+2024-11-02 07:07:49 UTC | CORE | WARN | (pkg/util/log/log.go:886 in func1) | Unknown environment variable: DD_GIT_COMMIT_SHA
+2024-11-02 07:07:49 UTC | CORE | INFO | (pkg/util/log/log.go:841 in func1) | Loading proxy settings
+2024-11-02 07:07:49 UTC | CORE | INFO | (pkg/util/log/log.go:841 in func1) | Starting to resolve secrets
+2024-11-02 07:07:49 UTC | CORE | WARN | (pkg/util/log/log.go:886 in func1) | Agent configuration relax permissions constraint on the secret backend cmd, Group can read and exec
+2024-11-02 07:07:49 UTC | CORE | INFO | (pkg/util/log/log.go:841 in func1) | Finished resolving secrets
+2024-11-02 07:07:49 UTC | CORE | INFO | (pkg/util/log/log.go:846 in func1) | 0 Features detected from environment: 
+2024-11-02 07:07:49 UTC | CORE | INFO | (pkg/runtime/runtime.go:28 in func1) | runtime: set GOMAXPROCS to: 2
+2024-11-02 07:07:49 UTC | CORE | INFO | (pkg/process/metadata/workloadmeta/extractor.go:84 in NewWorkloadMetaExtractor) | Instantiating a new WorkloadMetaExtractor
+2024-11-02 07:07:49 UTC | CORE | INFO | (comp/core/tagger/taggerimpl/tagger.go:172 in newTaggerClient) | TaggerClient is created, defaultTagger type:  *local.Tagger
+2024-11-02 07:07:49 UTC | CORE | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:242 in NewDefaultForwarder) | Retry queue storage on disk is disabled
+2024-11-02 07:07:50 UTC | CORE | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:242 in NewDefaultForwarder) | Retry queue storage on disk is disabled
+2024-11-02 07:07:52 UTC | CORE | ERROR | (comp/aggregator/demultiplexer/demultiplexerimpl/demultiplexer.go:74 in newDemultiplexer) | Error while getting hostname, exiting: unable to reliably determine the host name. You can define one in the agent config file or in your hosts file
+2024-11-02 07:07:52 UTC | CORE | ERROR | (comp/aggregator/demultiplexer/demultiplexerimpl/demultiplexer.go:74 in newDemultiplexer) | Error while getting hostname, exiting: unable to reliably determine the host name. You can define one in the agent config file or in your hosts file
+2024-11-02 07:07:52 UTC | CORE | ERROR | (comp/aggregator/demultiplexer/demultiplexerimpl/demultiplexer.go:74 in newDemultiplexer) | Error while getting hostname, exiting: unable to reliably determine the host name. You can define one in the agent config file or in your hosts file
+2024-11-02 07:07:52 UTC | CORE | ERROR | (comp/aggregator/demultiplexer/demultiplexerimpl/demultiplexer.go:74 in newDemultiplexer) | Error while getting hostname, exiting: unable to reliably determine the host name. You can define one in the agent config file or in your hosts file
+2024-11-02 07:07:52 UTC | CORE | ERROR | (comp/aggregator/demultiplexer/demultiplexerimpl/demultiplexer.go:74 in newDemultiplexer) | Error while getting hostname, exiting: unable to reliably determine the host name. You can define one in the agent config file or in your hosts file
+2024-11-02 07:07:52 UTC | CORE | ERROR | (comp/aggregator/demultiplexer/demultiplexerimpl/demultiplexer.go:74 in newDemultiplexer) | Error while getting hostname, exiting: unable to reliably determine the host name. You can define one in the agent config file or in your hosts file
