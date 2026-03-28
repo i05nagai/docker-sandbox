@@ -2,8 +2,14 @@
 
 ```
 make docker-network
+
 make docker-run-kafka-zookeeper
+./run_zookeeper.sh
+
 make docker-run-kafka-keeper
+
+make docker-run-kafka-server
+./run_kafka_server.sh
 ```
 
 
@@ -73,7 +79,8 @@ kafka-console-consumer.sh <option>
 --timeout-ms <Integer: timeout_ms>       If specified, exit if no message is
                                            available for consumption for the
                                            specified interval.
---topic <String: topic>                  The topic id to consume on.
+* `--topic <String: topic>`
+    * The topic id to consume on.
 * `--value-deserializer <String: deserializer for values>`
 * `--whitelist <String: whitelist>` 
     * Whitelist of topics to include for consumption.
