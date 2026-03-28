@@ -1,0 +1,2 @@
+ARG DOCKER_IMAGE_PREFIX
+FROM apache/beam_java21_sdk:2.68.0

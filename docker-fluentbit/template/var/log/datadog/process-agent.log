@@ -1,0 +1,59 @@
+2024-11-02 07:07:49 UTC | PROCESS | INFO | (pkg/util/log/log.go:846 in func1) | running on platform: ubuntu
+2024-11-02 07:07:49 UTC | PROCESS | INFO | (pkg/util/log/log.go:846 in func1) | running version: 7.57.2
+2024-11-02 07:07:49 UTC | PROCESS | INFO | (pkg/util/log/log.go:841 in func1) | Starting to load the configuration
+2024-11-02 07:07:49 UTC | PROCESS | WARN | (pkg/util/log/log.go:886 in func1) | Unknown environment variable: DD_GIT_REPOSITORY_URL
+2024-11-02 07:07:49 UTC | PROCESS | WARN | (pkg/util/log/log.go:886 in func1) | Unknown environment variable: DD_GIT_COMMIT_SHA
+2024-11-02 07:07:49 UTC | PROCESS | INFO | (pkg/util/log/log.go:841 in func1) | Loading proxy settings
+2024-11-02 07:07:49 UTC | PROCESS | INFO | (pkg/util/log/log.go:841 in func1) | Starting to resolve secrets
+2024-11-02 07:07:49 UTC | PROCESS | WARN | (pkg/util/log/log.go:886 in func1) | Agent configuration relax permissions constraint on the secret backend cmd, Group can read and exec
+2024-11-02 07:07:49 UTC | PROCESS | INFO | (pkg/util/log/log.go:841 in func1) | Finished resolving secrets
+2024-11-02 07:07:49 UTC | PROCESS | INFO | (pkg/util/log/log.go:846 in func1) | 0 Features detected from environment: 
+2024-11-02 07:07:49 UTC | PROCESS | INFO | (pkg/config/setup/config.go:1938 in LoadCustom) | Starting to load the configuration
+2024-11-02 07:07:52 UTC | PROCESS | INFO | (pkg/process/util/signal_nowindows.go:26 in HandleSignals) | Caught signal 'terminated'; terminating.
+2024-11-02 07:08:49 UTC | PROCESS | ERROR | (pkg/process/checks/host_info.go:105 in getHostname) | failed to get hostname from grpc: cannot connect to datadog agent via grpc: context deadline exceeded
+2024-11-02 07:08:50 UTC | PROCESS | ERROR | (pkg/process/checks/host_info.go:112 in getHostname) | failed to get hostname from cmd: exit status 255
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (pkg/process/metadata/workloadmeta/extractor.go:84 in NewWorkloadMetaExtractor) | Instantiating a new WorkloadMetaExtractor
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:242 in NewDefaultForwarder) | Retry queue storage on disk is disabled
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:242 in NewDefaultForwarder) | Retry queue storage on disk is disabled
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:242 in NewDefaultForwarder) | Retry queue storage on disk is disabled
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:242 in NewDefaultForwarder) | Retry queue storage on disk is disabled
+2024-11-02 07:08:50 UTC | PROCESS | WARN | (pkg/process/checks/checks.go:137 in canEnableContainerChecks) | Disabled container checks because no container environment detected (see list of detected features in `agent status`)
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/process/agent/agent_linux.go:61 in enabledHelper) | Process/Container Collection in the Process Agent will be deprecated in a future release and will instead be run in the Core Agent. Set process_config.run_in_core_agent.enabled to true to switch now.
+2024-11-02 07:08:50 UTC | PROCESS | WARN | (pkg/process/checks/checks.go:137 in canEnableContainerChecks) | Disabled container checks because no container environment detected (see list of detected features in `agent status`)
+2024-11-02 07:08:50 UTC | PROCESS | WARN | (pkg/process/checks/checks.go:137 in canEnableContainerChecks) | Disabled container checks because no container environment detected (see list of detected features in `agent status`)
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/process/apiserver/apiserver.go:47 in newApiServer) | API server listening on localhost:6162
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/tagger/taggerimpl/tagger.go:172 in newTaggerClient) | TaggerClient is created, defaultTagger type:  *local.Tagger
+2024-11-02 07:08:50 UTC | PROCESS | WARN | (pkg/process/checks/checks.go:137 in canEnableContainerChecks) | Disabled container checks because no container environment detected (see list of detected features in `agent status`)
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:100 in start) | workloadmeta store initialized successfully
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:394 in Start) | Forwarder started, sending to 1 endpoint(s) with 1 worker(s) each: "https://process-events.datadoghq.com" (1 api key(s))
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:394 in Start) | Forwarder started, sending to 1 endpoint(s) with 1 worker(s) each: "https://process.datadoghq.com" (1 api key(s))
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:394 in Start) | Forwarder started, sending to 1 endpoint(s) with 1 worker(s) each: "https://process.datadoghq.com" (1 api key(s))
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:394 in Start) | Forwarder started, sending to 1 endpoint(s) with 1 worker(s) each: "https://process.datadoghq.com" (1 api key(s))
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (pkg/process/runner/submitter.go:182 in printStartMessage) | Starting CheckSubmitter for host=221a099c6fd2, endpoints=[https://process.datadoghq.com], events endpoints=[https://process-events.datadoghq.com]
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (pkg/process/runner/runner.go:286 in Run) | Starting process-agent with enabled checks=[process_discovery]
+2024-11-02 07:08:50 UTC | PROCESS | WARN | (pkg/config/model/viper.go:445 in GetStringMapString) | failed to get configuration value for key "container_labels_as_tags": invalid character 'c' looking for beginning of value
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (command/main_common.go:274 in runApp) | Received exit signal, shutting down...
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/tagger/taggerimpl/collectors/workloadmeta_main.go:139 in stream) | workloadmeta tagger collector started
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "docker" could not start. error: component workloadmeta-docker is disabled: Agent is not running on Docker
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "ecs" could not start. error: component workloadmeta-ecs is disabled: Agent is not running on ECS EC2
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "kube_metadata" could not start. error: component workloadmeta-kube_metadata is disabled: Agent is not running on Kubernetes
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "containerd" could not start. error: component workloadmeta-containerd is disabled: Agent is not running on containerd
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "ecs_fargate" could not start. error: component workloadmeta-ecs_fargate is disabled: Agent is not running on ECS Fargate
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:554 in startCandidates) | workloadmeta collector "host" started successfully
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "podman" could not start. error: component workloadmeta-podman is disabled: Podman not detected
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "kubelet" could not start. error: component workloadmeta-kubelet is disabled: Agent is not running on Kubernetes
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "cloudfoundry-vm" could not start. error: component workloadmeta-cloudfoundry-vm is disabled: Agent is not running on CloudFoundry
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (comp/core/workloadmeta/impl/store.go:557 in startCandidates) | workloadmeta collector "cloudfoundry-container" could not start. error: component workloadmeta-cloudfoundry-container is disabled: Agent is not running on CloudFoundry
+2024-11-02 07:08:50 UTC | PROCESS | INFO | (pkg/process/runner/runner.go:243 in logCheckDuration) | Finished process_discovery check #1 in 931.584µs
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/transaction/transaction.go:450 in internalProcess) | Successfully posted payload to "https://process.datadoghq.com/api/v1/discovery" (202 Accepted), the agent will only log transaction success every 500 transactions
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:404 in Stop) | stopping the Forwarder
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/domain_forwarder.go:256 in Stop) | domainForwarder stopped
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:404 in Stop) | stopping the Forwarder
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/domain_forwarder.go:256 in Stop) | domainForwarder stopped
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:404 in Stop) | stopping the Forwarder
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/domain_forwarder.go:256 in Stop) | domainForwarder stopped
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/default_forwarder.go:404 in Stop) | stopping the Forwarder
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (comp/forwarder/defaultforwarder/domain_forwarder.go:256 in Stop) | domainForwarder stopped
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (command/main_common.go:283 in runApp) | The process-agent has successfully been shut down
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (command/main_common.go:283 in runApp) | The process-agent has successfully been shut down
+2024-11-02 07:08:52 UTC | PROCESS | INFO | (command/main_common.go:283 in runApp) | The process-agent has successfully been shut down

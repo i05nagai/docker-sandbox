@@ -1,0 +1,3 @@
+CREATE CONSTRAINT unique_person_id IF NOT EXISTS
+FOR (p:Person)
+REQUIRE p.personId IS UNIQUE

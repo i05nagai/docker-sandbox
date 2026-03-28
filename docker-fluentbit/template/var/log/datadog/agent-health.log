@@ -1,0 +1,9 @@
+Agent health: PASS
+=== 14 healthy components ===
+ad-config-provider-kubernetes-container-allinone, ad-containerlistener, ad-servicelistening, aggregator, collector-queue-15s, collector-queue-20s, dogstatsd-main, forwarder, healthcheck, healthcheck, tagger-store, tagger-workloadmeta, workloadmeta-puller, workloadmeta-store
+Agent health: FAIL
+=== 13 healthy components ===
+ad-config-provider-kubernetes-container-allinone, ad-containerlistener, ad-servicelistening, aggregator, collector-queue-15s, collector-queue-20s, dogstatsd-main, healthcheck, healthcheck, tagger-store, tagger-workloadmeta, workloadmeta-puller, workloadmeta-store
+=== 1 unhealthy components ===
+forwarder
+Error: found 1 unhealthy components

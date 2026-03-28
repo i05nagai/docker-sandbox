@@ -1,5 +1,5 @@
-DIRECTORIES ?= $(wildcard *)
-IGNORE_FILES ?= Makefile
+DIRECTORIES ?= $(wildcard */)
+IGNORE_FILES ?= Makefile template/
 
 DIRECTORIES_FILTERED = $(filter-out ${IGNORE_FILES},${DIRECTORIES})
 # delete docker- prefix from each directory name

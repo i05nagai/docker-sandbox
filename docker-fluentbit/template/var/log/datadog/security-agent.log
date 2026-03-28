@@ -1,0 +1,11 @@
+2024-11-02 07:07:49 UTC | SECURITY | INFO | (pkg/util/log/log.go:841 in func1) | Starting to load the configuration
+2024-11-02 07:07:49 UTC | SECURITY | WARN | (pkg/util/log/log.go:886 in func1) | Unknown environment variable: DD_GIT_REPOSITORY_URL
+2024-11-02 07:07:49 UTC | SECURITY | WARN | (pkg/util/log/log.go:886 in func1) | Unknown environment variable: DD_GIT_COMMIT_SHA
+2024-11-02 07:07:49 UTC | SECURITY | INFO | (pkg/util/log/log.go:841 in func1) | Loading proxy settings
+2024-11-02 07:07:49 UTC | SECURITY | INFO | (pkg/util/log/log.go:841 in func1) | Starting to resolve secrets
+2024-11-02 07:07:49 UTC | SECURITY | WARN | (pkg/util/log/log.go:886 in func1) | Agent configuration relax permissions constraint on the secret backend cmd, Group can read and exec
+2024-11-02 07:07:49 UTC | SECURITY | INFO | (pkg/util/log/log.go:841 in func1) | Finished resolving secrets
+2024-11-02 07:07:49 UTC | SECURITY | INFO | (pkg/util/log/log.go:846 in func1) | 0 Features detected from environment: 
+2024-11-02 07:07:49 UTC | SECURITY | INFO | (pkg/config/setup/config.go:1938 in LoadCustom) | Starting to load the configuration
+2024-11-02 07:07:49 UTC | SECURITY | INFO | (pkg/config/setup/config.go:1938 in LoadCustom) | Starting to load the configuration
+2024-11-02 07:07:49 UTC | SECURITY | INFO | (pkg/config/setup/config.go:1938 in LoadCustom) | Starting to load the configuration

@@ -1,0 +1,19 @@
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (pkg/util/log/log.go:841 in func1) | Starting to load the configuration
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (pkg/config/setup/config.go:1938 in LoadCustom) | Starting to load the configuration
+2024-11-02 07:07:49 UTC | SYS-PROBE | WARN | (pkg/config/setup/config.go:1953 in LoadCustom) | Unknown environment variable: DD_GIT_REPOSITORY_URL
+2024-11-02 07:07:49 UTC | SYS-PROBE | WARN | (pkg/config/setup/config.go:1953 in LoadCustom) | Unknown environment variable: DD_GIT_COMMIT_SHA
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (pkg/config/setup/config.go:1596 in LoadProxyFromEnv) | Loading proxy settings
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (pkg/config/env/environment_detection.go:124 in DetectFeatures) | 0 Features detected from environment: 
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (pkg/runtime/runtime.go:28 in func1) | runtime: set GOMAXPROCS to: 2
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (pkg/config/remote/client/client.go:389 in pollLoop) | retrying the first update of remote-config state (could not acquire agent auth token: unable to read authentication token file: open /etc/datadog-agent/auth_token: no such file or directory)
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (cmd/system-probe/subcommands/run/command.go:297 in startSystemProbe) | starting system-probe v7.57.2
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (cmd/system-probe/subcommands/run/command.go:409 in logUserAndGroupID) | current user id/name: 0/root
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (cmd/system-probe/subcommands/run/command.go:412 in logUserAndGroupID) | current group id/name: 0/root
+2024-11-02 07:07:49 UTC | SYS-PROBE | INFO | (cmd/system-probe/subcommands/run/command.go:302 in startSystemProbe) | system probe not enabled. exiting
+2024-11-02 07:07:50 UTC | SYS-PROBE | INFO | (pkg/config/remote/client/client.go:423 in pollLoop) | retrying the first update of remote-config state (could not acquire agent auth token: unable to read authentication token file: open /etc/datadog-agent/auth_token: no such file or directory)
+2024-11-02 07:07:51 UTC | SYS-PROBE | INFO | (pkg/config/remote/client/client.go:423 in pollLoop) | retrying the first update of remote-config state (could not acquire agent auth token: unable to read authentication token file: open /etc/datadog-agent/auth_token: no such file or directory)
+2024-11-02 07:07:52 UTC | SYS-PROBE | INFO | (cmd/system-probe/subcommands/run/command.go:162 in func2) | Received signal 'terminated', shutting down...
+2024-11-02 07:07:52 UTC | SYS-PROBE | INFO | (pkg/config/remote/client/client.go:423 in pollLoop) | retrying the first update of remote-config state (could not acquire agent auth token: unable to read authentication token file: open /etc/datadog-agent/auth_token: no such file or directory)
+2024-11-02 07:07:53 UTC | SYS-PROBE | INFO | (pkg/config/remote/client/client.go:423 in pollLoop) | retrying the first update of remote-config state (could not acquire agent auth token: unable to read authentication token file: open /etc/datadog-agent/auth_token: no such file or directory)
+2024-11-02 07:07:53 UTC | SYS-PROBE | INFO | (pkg/config/remote/client/client.go:423 in pollLoop) | retrying the first update of remote-config state (could not acquire agent auth token: unable to read authentication token file: open /etc/datadog-agent/auth_token: no such file or directory)
+2024-11-02 07:07:53 UTC | SYS-PROBE | INFO | (pkg/config/remote/client/client.go:423 in pollLoop) | retrying the first update of remote-config state (could not acquire agent auth token: unable to read authentication token file: open /etc/datadog-agent/auth_token: no such file or directory)
